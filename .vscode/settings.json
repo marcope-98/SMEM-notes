@@ -1,59 +1,37 @@
 {
-    "latex-workshop.latex.recipes":[
+    "latex-workshop.latex.tools": [
         {
-            "name": "makeglossaries -> latexmk ",
-            "tools": [
-                "latexmk",
-                "biber",
-                "makeglossaries"
-            ]
-        }
-    ],
-
-    "latex-workshop.latex.tools":[
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args":[
-                "--shell-escape",
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%"    
+            "name": "makeglossaries",
+            "command": "makeglossaries",
+            "args":[ 
+                "-d%OUTDIR%/build",
+                "%DOCFILE%"
             ],
             "env": {}
         },
         {
             "name": "latexmk",
             "command": "latexmk",
-            "args": [
+            "args":[ 
                 "-synctex=1",
                 "-file-line-error",
                 "-pdf",
                 "-interaction=nonstopmode",
-                "-outdir=%OUTDIR%",
+                "-emulate-aux-dir",
+                "-aux-directory=%OUTDIR%/build",
                 "%DOC%"
             ],
             "env": {}
-
-        },
-        {
-            "name" : "biber",
-            "command" : "biber",
-            "args":[
-                "%DOCFILE%"
-            ],
-            "env": {}
-        },
-        {
-            "name" : "makeglossaries",
-            "command" : "makeglossaries",
-            "args":[
-                "%DOCFILE%"
-            ],
-            "env": {}
         }
-
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk",
+                "makeglossaries"
+            ]
+        }
     ]
-    
 }
+
