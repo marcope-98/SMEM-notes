@@ -1,2 +1,2 @@
-build/
-main.synctex.gz
+build/*
+!build/main.pdf

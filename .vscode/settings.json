@@ -1,37 +1,70 @@
 {
-    "latex-workshop.latex.tools": [
+    "latex-workshop.latex.outDir": "build",
+    "latex-workshop.latex.recipes":[
         {
-            "name": "makeglossaries",
-            "command": "makeglossaries",
-            "args":[ 
-                "-d%OUTDIR%/build",
-                "%DOCFILE%"
+            "name": "build",
+            "tools": [
+                "make_dir",
+                "latexmk",
+                // "biber",
+                // "makeglossaries",
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools":[
+        {
+            "name": "make_dir",
+            "command": "mkdir",
+            "args":[
+                "-p",
+                "%OUTDIR%/chapters",
+                "%OUTDIR%/lib"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args":[
+                "--shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"    
             ],
             "env": {}
         },
         {
             "name": "latexmk",
             "command": "latexmk",
-            "args":[ 
+            "args": [
                 "-synctex=1",
                 "-file-line-error",
                 "-pdf",
                 "-interaction=nonstopmode",
-                "-emulate-aux-dir",
-                "-aux-directory=%OUTDIR%/build",
+                "-outdir=%OUTDIR%",
                 "%DOC%"
             ],
             "env": {}
-        }
-    ],
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "latexmk",
-            "tools": [
-                "latexmk",
-                "makeglossaries"
-            ]
-        }
-    ]
-}
 
+        },
+        {
+            "name" : "biber",
+            "command" : "biber",
+            "args": [
+                "%OUTDIR%/%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name" : "makeglossaries",
+            "command" : "makeglossaries",
+            "args":[
+                "%OUTDIR%/%DOCFILE%"
+            ],
+            "env": {}
+        }
+
+    ]
+    
+}

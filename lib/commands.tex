@@ -32,6 +32,20 @@
 % command to use the definition box \define{Name}{Verbose definition of Name}
 \newcommand{\define}[2]{\begin{definition}{#1}{}#2\end{definition}}
 
+\DeclarePairedDelimiter{\norma}{\lVert}{\rVert}
+
+\newcommand{\M}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\und}[1]{\underline{#1}}
+\newcommand{\B}[1]{\begin{Bmatrix}#1\end{Bmatrix}}
+\newcommand{\pd}[2]{\cfrac{\partial#1}{\partial#2}}
+\newcommand{\td}[2]{\cfrac{d#1}{d#2}}
+\newcommand{\tdd}[2]{\cfrac{d^2#1}{d#2^2}}
+\newcommand{\pdd}[2]{\cfrac{\delta^2#1}{\delta#2^2}}
+\renewcommand{\theta}{\vartheta}
+\newcommand{\omissis}{[\textellipsis\unkern]}
+\newcommand{\pexp}[2]{\prescript{#1}{}{#2}{}{}}
+\newcommand{\ret}[1]{{#1}^{\leftarrow}}
+\renewcommand{\epsilon}{\varepsilon}
 
 \newcolumntype{R}[1]{>{\raggedright\arraybackslash}p{#1-2\tabcolsep-1.5\arrayrulewidth}}
 \newcolumntype{P}[1]{>{\raggedleft\arraybackslash}p{#1-2\tabcolsep-1.5\arrayrulewidth}}
