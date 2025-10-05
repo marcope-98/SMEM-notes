@@ -1,1 +1,1778 @@
 \chapter{Equazioni fondamentali della dinamica}
+	
+	Lo studio dinamico dei sistemi meccanici può essere effettuato con approcci diversi a seconda delle caratteristiche del sistema e anche in base alle finalità dello studio stesso.\newline
+	
+	L'approccio energetico (\emph{equazione dell'energia}) consente di calcolare facilmente l'equazione del moto di una macchina ad 1 G.d.L. e quindi di effettuarne la simulazione dinamica: cioè date le forze agenti analizzare il movimento in funzione del tempo.
+	
+	La sua particolarità ed efficacia risiede proprio nel fatto che nella formulazione del problema dinamico non entrano le forze reattive esterne e le forze reattive interne (\emph{eccetto quelle elastiche}).
+	
+	Nel caso di sistemi a due o più G.d.L. un approccio sostanzialmente simile a quello energetico è quello Lagrangiano che si basa sulla nota equazione di Lagrange. Anche in questo caso le forze reattive non vengono richiamate dalle equazioni.\newline
+	
+	Lo studio della dinamica di una macchina può essere effettuato anche con un altro approccio, chiamato Newtoniano perché fa uso della seconda legge di Newton e del teorema del momento della quantità di moto (\emph{equazioni cardinali della dinamica}).
+	
+	In questo caso nella formulazione del problema dinamico entrano sia le forze reattive che si scambiano i vari membri della macchina tra di loro, che le forze reattive tra macchina e telaio.
+
+Anche per una macchina ad un solo G.d.L. si ottiene un sistema di equazioni composto da una equazione differenziale e da una serie di equazioni algebriche.\newline
+
+Un altro strumento molto potente (\emph{utilizzato in modo particolare per problemi statici}) per lo studio dei meccanismi è il \textbf{principio dei lavori virtuali} applicabile ai sistemi ideali privi di attrito. Il fatto che nella relazione che esprime il principio dei lavori virtuali (PLV) non entrino le forze reattive è uno dei principali vantaggi del metodo.\newline
+
+L'analisi dinamica può essere di tipo diretto (\emph{dinamica diretta}) o di tipo inverso (\emph{cinetostatico}).\newline
+
+Nel problema della \emph{dinamica diretta}, dato il sistema meccanico, le masse e le inerzie dei vari membri, le forze esterne applicate e le condizioni iniziali, lo scopo è la determinazione della legge del moto.
+
+È un problema differenziale perché richiede l'intergazione delle equazioni del moto. Il modello matematico è quindi rappresentato da un \und{sistema di equazioni differenziali}.\newline
+
+Nel problema di \emph{dinamica inversa} è assegnata la legge del moto del sistema, le masse e le inerzie dei vari membri, le forze esterne applicate, le condizioni iniziali; scopo dell'analisi è la determinazione dei valori della forza motrice che permette che si realizzi quel tipo di moto. 
+
+È un problema di \und{tipo algebrico}, perché essendo assegnato il moto, lo spostamento e le sue derivate prima e seconda sono note.
+	
+	\section{Equazioni di Newton-Eulero nel piano}
+	
+	Il movimento del sistema meccanico è noto, si vogliono trovare le forze agenti (ovvero la legge del moto).
+	
+	Per un singolo corpo si possono, dunque, scrivere tre equazioni:
+	\begin{gather*}
+	M\,\ddot{x_G} = R_x^{(e)}\qquad;\qquad M\,\ddot{y_G} = R_y^{(e)}\qquad;\qquad I_{zG}\,\ddot{\theta} = M_G^e
+	\end{gather*}
+	
+	L'approccio/strategia che si usa è di conseguenza dividere un sistema meccanico nei diversi corpi che lo compongono e studiarne uno alla volta, applicando le equazioni sopra riportate.
+
+		\subsection{Equazioni di Newton}
+	
+	\begin{minipage}{.3\textwidth}
+	\centering
+	\includegraphics[width = 1\textwidth]{chapter06/Immagine94.eps}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.65\textwidth}
+	 La prima legge della meccanica newtoniana afferma che un corpo di massa \emph{m} soggetto ad accelerazione $\mathbf{a}$ risente di una forza $\mathbf{F}$ parallela e proporzionale all'accelerazione stessa per mezzo della massa (inerziale) del corpo.
+	 \[
+	 \mathbf{a} = \cfrac{\mathbf{F}}{m}
+	 \]
+	 
+	 In altri termini la massa inerziale rappresenta la resistenza del corpo ad accelerare.
+	\end{minipage}
+	
+	Lo schema appena esposto tuttavia è incompleto, per il terzo principio della dinamica Newtoniana. Infatti il concetto di forza non è altro che un'interazione tra particelle:
+	\vspace{1mm}
+	
+	\begin{minipage}{.5\textwidth}
+	Le due particelle prese in esame formano infatti una coppia di forze a braccio nullo e stesso modulo.
+	
+	Posso a questo punto enunciare la nozione di quantità di moto delle due particelle nell'istante iniziale e finale:
+	\begin{gather*}
+		\mathbf{Q_1} = m_1\,\mathbf{v_1}\qquad;\qquad\mathbf{Q_2} = m_2\,\mathbf{v_2}\qquad\Leftarrow\text{iniziale}\\
+		\mathbf{Q_1}^{'} = m_1\,\mathbf{v_1}^{'}\,\quad;\qquad\mathbf{Q_2}^{'} = m_2\,\mathbf{v_2}^{'}\qquad\Leftarrow\text{finale}
+	\end{gather*}
+	
+	Due membri rigidi (o particelle nel nostro caso) sono dinamicamente equivalenti quando si comportano in modo identico se soggetti all'applicazione di uno stesso sistema di forze.
+	
+	Dovranno, in primo luogo, avere perciò in ogni istante valori uguali della quantità di moto:
+	\begin{align*}
+	m_1\,\mathbf{v_1} + m_2\,\mathbf{v_2} &= m_1\,\mathbf{v_1}^{`} + m_2\,\mathbf{v_2}^{`}\\
+	m_1\,\mathbf{v_1} - m_1\,\mathbf{v_1}^{`} &= m_2\,\mathbf{v_2}^{`} - m_2\,\mathbf{v_2}\\
+	-\,\Delta Q_1 &= \Delta Q_2
+ 	\end{align*}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.5\textwidth}
+	\centering
+	\includegraphics[width=.95\textwidth]{chapter06/Immagine95}
+	\end{minipage}
+	\vspace{1mm}
+	
+Si osservi che è stata imposta l'uguaglianza tra due particelle in quanto siamo partiti dall'ipotesi che le forze siano uguali in modulo e opposte in verso: se tale ipotesi è verificata le loro quantità di moto dovranno per forza essere uguali.
+	
+	Eseguendone a questo punto la derivata:
+	\begin{align*}
+	\cfrac{m_1\,\mathbf{v_1} - m_1\,\mathbf{v_1}^{`}}{\Delta t} &= \cfrac{m_2\,\mathbf{v_2}^{'} - m_2\,\mathbf{v_2}}{\Delta t}\\
+	m_1\,(-\,a_1) &= m_2\,(a_2)
+	\end{align*}
+	Si può dunque notare che la derivata della quantità di moto nonché $\lim_{t \to 0} \cfrac{\Delta Q}{\Delta t} = \mathbf{F}$\,e di conseguenza possiamo ammettere che:
+	\begin{gather*}
+	F_{12} = \td{}{t}(m_2\,\mathbf{v_2})\qquad;\qquad F_{21} = \td{}{t}(m_1\,\mathbf{v_1})
+	\end{gather*}
+	
+	Termina dunque la verifica che la forza esercitata dalla particella generica 1 sulla particella generica 2 è uguale in modulo e contraria in verso alla forza che la particella 2 esercita sulla particella 1: $\mathbf{F_{12}} = -\,\mathbf{F_{21}} $
+	
+	Possiamo sfruttare le interazioni che avvengono tra particelle di uno o più corpi estesi per compiere lo studio della dinamica di un meccanismo:
+	
+	Un sistema meccanico può essere interpretato come composto da un certo numero di particelle:
+
+	\begin{minipage}{.3\textwidth}
+	\centering
+	\includegraphics[width=.85\textwidth]{chapter06/Immagine96}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.65\textwidth}
+	L'insieme di particelle rappresentato a fianco è rappresentativo delle parti in cui si è deciso di dividere il sistema meccanico. Tale scelta è puramente arbitraria e dipende dalle forze scambiate che ci interessa valutare.\newline
+	
+	La scelta di quali particelle includere nell'insieme che si vuole analizzare può essere appoggiata nel rispondere alla domanda: ``Qual è l'insieme di corpi di cui si vuole studiare la dinamica?''
+	\end{minipage}
+	
+	Tale semplificazione del sistema meccanico permette di descrivere abbastanza efficacemente come le particelle scelte interagiscono l'una con l'altra e con particelle esterne al sistema tracciato.
+	\vspace{2mm}
+	
+	\begin{minipage}{.35\textwidth}
+	\includegraphics[width=.85\textwidth]{chapter06/Immagine97}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.65\textwidth}
+	\begin{tabular}{llcccccr}
+	1)& $m_1\,\mathbf{a_1} = \mathbf{F_{21}}$&& $\mathbf{F_{21}}$ & & & & +\\
+	&&&&&&&\\
+	2)& $m_2\,\mathbf{a_2} = \mathbf{F_{12}} + \mathbf{F_{32}}$& &$\mathbf{F_{12}}$ & $\mathbf{F_{32}}$&&&+\\
+	&&&&&&&\\
+	3)& $m_3\,\mathbf{a_3} = \mathbf{F_{23}}$&&&$\mathbf{F_{23}}$&&&+\\
+	&&&&&&&\\
+	4)& $m_4\,\mathbf{a_4} = \mathbf{F_{54}} + \mathbf{F_{74}}$&&&&$\mathbf{F_{54}}$&$\mathbf{F_{74}}$&+\\
+	&&&&&&&\\
+	5)& $m_5\,\mathbf{a_5} = \mathbf{F_{45}} + \mathbf{F_{65}}$&&&&$\mathbf{F_{45}}$&$\mathbf{F_{65}}$&=\\
+	\midrule
+	&&&&&&&\\
+	&$\sum_i m_i\,\mathbf{a_i}$&=&0&0&0&$\mathbf{F_{74}}+\mathbf{F_{65}}$
+	\end{tabular}
+	\end{minipage}
+	
+	Come di può osservare dalla generalizzazione dello studio della dinamica di un meccanismo, tutte le forze interne che si sviluppano tra le particelle dell'insieme in esame si elidono, facendo rimanere solamente le forze esterne.
+	
+	Per mezzo di tale esempio possiamo enunciare la \textbf{prima equazione cardinale della dinamica dei sistemi meccanici}:
+	\begin{empheq}[box=%
+	\fbox]{align*}
+	\sum_{i=1}^{N} (m_i\,\mathbf{a_i}) = \mathbf{R}^{(e)}\qquad;\qquad \mathbf{R}^{(i)}=0
+	\end{empheq}
+	
+	ovvero, la somma delle forze agenti su un sistema è pari alla risultante delle forze esterne.
+	
+	Dalla sua interpretazione in termini macroscopici, si ha:
+	
+	\begin{gather*}
+	m_i\,\mathbf{a_i} = \td{}{t}(m_i\,\mathbf{v_i})\\
+	\sum_{i=1}^n\,(\td{}{t}(m_i\,\mathbf{v_i})) = \mathbf{R}^{(e)}\qquad\iff\qquad \td{}{t}(\sum_{i=1}^n\,(m_i\,\mathbf{v_i})) = \mathbf{R}^{(e)}\\
+	\text{Noto che:}\quad m_i\,\mathbf{v_i}\quad \text{è la quatità di moto di una singola particella;}\\
+	\hspace{23mm} \sum_{i=1}^{n}\,m_i\,\mathbf{v_i}\quad\text{è la quantità di moto dell'intero sistema di particelle}
+	\end{gather*}
+	\begin{empheq}[box=%
+	\fbox]{gather*}
+	\td{\mathbf{Q}}{t} = \mathbf{R}^{(e)}
+	\end{empheq}
+	
+	\begin{center}
+	{\scshape{\bfseries Esempi applicativi}}
+	\end{center}
+	\begin{enumerate}
+	\item \textbf{Motocicletta}
+	
+	\begin{minipage}{.35\textwidth}
+	\centering
+	\includegraphics[width=0.75\textwidth,angle = -20.34]{chapter06/Immagine98}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.6\textwidth}
+		
+	Consideriamo di dover analizzare il sistema motocicletta, secondo le modalità e le semplificazioni proposte in figura.
+	
+	Per questo primo esempio, immaginiamo che le forze esterne che subisce il sistema/insieme di particelle si riduca a:
+	\begin{itemize}
+	\item $\mathbf{F_a}$ forze di natura areodinamica;
+	\item $\mathbf{F_s}$ forza che l'asfalto esercita sul sistema;
+	\end{itemize}
+	Poiché, infatti, la ruota non può scivolare sull'asfalto, nasceranno forze di contatto tra l'asfalto e la ruota.
+	
+	Siamo dunque nelle condizioni di applicare il primo principio/equazione della dinamica dei sistemi meccanici:
+	\[
+	\dot{\mathbf{Q}} = \mathbf{F_a} + \mathbf{F_s}
+	\]
+	
+	Al fine di proseguire i calcoli relativi alla dinamica dei meccanismi risulta necessario introdurre il concetto di \textbf{centro di massa} o \textbf{baricentro}.
+		\end{minipage}
+		
+		\begin{minipage}{.65\textwidth}
+		Consideriamo un insieme di punti materiali, di cui è nota la posizione nello spazio e la singola massa: il baricentro sarà la media pesata delle masse, che nell'esempio proposto a fianco si esprime come:
+		\[
+		x_B = \cfrac{m_1\,x_1\,+\,m_2\,x_2\,+\,m_3\,x_3}{m_1+m_2+m_3}
+		\]
+\end{minipage}
+\hfill
+\begin{minipage}{.35\textwidth}
+\centering
+\includegraphics[width=.9\textwidth]{chapter06/Immagine99}
+\end{minipage}
+
+		Dato un insieme discreto di punti materiali, dunque, le coordinate del baricentro rispetto all'origine del S.d.r. fissato, si possono ricavare tramite la relazione:
+		\[
+		\mathbf{OG} = \cfrac{\sum\,m_i\,\mathbf{OP_i}}{\sum\,m_i} = \cfrac{1}{M}\,\sum_i\,m_i\,\mathbf{OP_i}
+		\]
+		
+		Dove:
+		\begin{itemize}
+		\item $\mathbf{OG}$ è la posizione del baricentro rispetto al S.d.R.
+		\item M è la massa del sistema di punti materiali presi in esame
+		\item $m_i$ è l'i-esima massa del sistema di particelle
+		\item $\mathbf{OP_i}$ è la posizione dell'i-esima massa del sistema di particelle
+		\end{itemize}
+		
+		Rielaborando le equazioni appena ottenute si ottiene che:
+		\[
+		M\,\mathbf{OG} = \sum_i\,m_i\,\mathbf{OP_i}
+		\]
+		eseguendone a questo punto la derivata temporale
+		\[
+		M\,\mathbf{v_G} = \td{}{t}\,\sum_i\,m_i\,\mathbf{OP_i} = \sum_i m_i\,\mathbf{v_i} = \sum_i \mathbf{Q_i}
+		\]
+		
+		Da tale relazione si può evincere che il sistema di punti può essere considerato come un punto nel baricentro con massa dell'intero corpo in cui sono concentrate le forze esterne
+		\begin{gather*}
+		M\,\td{\mathbf{v_G}}{t} = M\,\mathbf{a_G} = \mathbf{R}^{(e)} = \mathbf{F_a} + \mathbf{F_s}
+		\end{gather*}
+		
+		\item \textbf{Motore a doppio cilindro (?)}
+
+		\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\textwidth]{chapter06/Immagine100}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\textwidth]{chapter06/Immagine101}
+		\end{minipage}
+		
+		Considerando il meccanismo proposto (figura a destra) e il relativo schema semplificato, si richiede di valutare le azioni che il sistema di corpi esercita sul telaio, ovvero di valutare: $\mathbf{F_{40}}, \mathbf{F_{50}}$ e $\mathbf{F_{10}}$ in funzione del moto del corpo 1, data la velocità angolare dello stesso ($\omega$).
+		
+		Le stesse conclusioni che sono state formulate per la motocletta possono essere applicate anche per il meccanismo sotto esame:
+		\begin{align*}
+			\mathbf{R}^{(e)} &= M\,\mathbf{a_G}\\
+			\mathbf{F_{01}} + \mathbf{F_{02}} + \mathbf{F_{03}} &= M\,\mathbf{a_G}\\  	
+			\mathbf{F_{01}} + \mathbf{F_{02}} + \mathbf{F_{03}} &= M_1\,\mathbf{a_{G1}} + M_2\,\mathbf{a_{G2}}+ M_3\,\mathbf{a_{G3}}+ M_4\,\mathbf{a_{G4}} + M_5\,\mathbf{a_{G5}}
+ 		\end{align*}
+ 		
+ 		Il problema che ci viene posto rientra nella categoria di \textbf{Problema di dinamica inversa}.
+ 		
+ 		È necessario conoscere masse e accelerazioni dei baricentri dei singoli corpi per valutare le forze esterne che agiscono tra sistema e telaio.
+ 		
+ 		Ipotizzando che le masse $M_2 = M_3 \approx 0$, la relazione può essere semplificata, nel seguente modo:
+ 		
+ 		\[
+ 		\mathbf{R}^{(3)} = M_1\,\mathbf{a_{G2}} + M_4\,\mathbf{a_{G4}} + M_5\,\mathbf{a_{G5}}
+ 		\]
+ 		
+ 		Noto che l'accelerazione $a_{G1}$ è nulla e sciegliendo l'origine del S.d.R. a cui riferire le posizioni dei baricentri degli altri corpi con il baricentro del membro 1 ($G_1 = \{0,0\}$) è possibile in primo luogo valutare le accelerazioni inognite tramite l'analisi cinematica e in secondo luogo sostituirle alla relazione riportata sopra per conoscere le forze che il sistema meccanico esercita sul telaio.
+ 		
+ 		A tal fine, data la simmetria del meccanismo, conviene analizzarne la sua dinamica , considerandone solo una delle due metà che vengono individuate dall'asse di simmetria.
+ 		
+ 		\begin{minipage}{.3\textwidth}
+ 		\centering
+ 		\includegraphics[width = .95\textwidth]{chapter06/Immagine102}
+ 		\end{minipage}
+ 		\hfill
+ 		\begin{minipage}{.65\textwidth}
+ 		Per mezzo delle considerazioni appena esposte possiamo procedere con l'analisi cinematica del ben noto poligono di chiusura:
+ 		
+ 		\[\mathbf{OA} + \mathbf{AB} + \mathbf{BB^{`}} + \mathbf{B^{`}O}=0\]
+ 		
+ 		\begin{align*}
+ 		\mathbf{OA} &= r\,\B{\cos{(\omega t + \pi)}\\\sin{(\omega t + \pi)}} = \B{-\,\cos{q}\\\sin{q}}\\
+ 		\mathbf{AB} &= L\,\B{\cos{\theta_2}\\\sin{\theta_2}}\\
+ 		\mathbf{BB^{`}} &= h\,\B{1\\0}\\
+ 		\mathbf{B^{`}O} &= y\,\B{0\\1}
+ 		\end{align*}
+ 		\end{minipage}
+ 		
+ 		La chiusura del poligono tracciato permette di ottenere un sistema di due equazioni:
+ 		\[
+ 		\begin{dcases}
+ 			-r\,\cos{q} + L\,\cos{\theta_2} + h = 0\\
+ 			+r\,\sin{q} + L\,\sin{\theta_2} - y =0
+ 		\end{dcases}
+ 		\]
+ 		
+ 		Dal calcolo del Jacobiano e della velocità dei cedenti in funzione del movente, e noto che il sistema così posto ha 1 G.d.L., possiamo esplicitare la velocità e l'accelerazione del del pattino (corpo 4) che è qui rappresentato dalla lettera B.
+ 		\begin{gather*}
+ 			\mathbf{v_{OB}} = \td{\mathbf{OB}}{t} = \B{0\\\dot{y}}\qquad;\qquad\mathbf{a_{OB}} = \tdd{\mathbf{OB}}{t} = \B{0\\\ddot{y}}
+ 		\end{gather*}
+ 		
+ 		Come anticipato dall'analisi cinematica del meccanismo a 1 G.d.L. possiamo relazionare la velocità del cedente ($\dot{y}$) con quella del movente ($\dot{q}$) tramite il relativo rapporto di velocità.
+ 		
+ 		\begin{minipage}{.5\textwidth}
+ 		\begin{tabular}{lcc}
+ 		ordine di derivazione & movente (q)& cedente (y)\\
+ 		\midrule
+ 		0&$q=\omega\,t$& y\\
+ 		&&\\
+ 		1&$\dot{q} = \omega$& $\tau_y\,\dot{q}$\\
+ 		&&\\
+ 		2&$\ddot{q} = 0$&$\ddot{y} = \tau_y^{`}\,\dot{q}^2 = \tau_y^{`}\,\omega^2$
+ 		\end{tabular}
+ 		\end{minipage}
+ 		\hfill
+ 		\begin{minipage}{.4\textwidth}
+		Per mezzo dei risultati appena ottenuti possiamo ammettere che le forze esterne agenti sul sistema hanno componente x nulla e componente y, pari a:
+		\begin{align*}
+		R_y^{(0)}& = \cancel{M_1\,a_{G1}} + M_4\,\tau_{yG4}^{`}\,\omega^2 + M_5\,\tau_{yG5}^{`}\,\omega^2\\
+		&= M_{Pistone}\,(\tau_{yG4}^{`} + \tau_{yG5}^{`})\,\omega^2
+		\end{align*}
+ 		\end{minipage}
+		\end{enumerate}
+		
+		\subsection{Le equazioni di Eulero}
+	
+		Per quanto utili a descrivere la traslazione di un corpo inteso come sistema di particelle, le equazioni di Newton non permettono di determinare la rotazione del sistema meccanico in esame.
+		
+		A tal fine si introducono, di conseguenza, le equazioni di Eulero: queste permettono, partendo dalla conservazione del momento della quantità di moto di trovare un'espressione per i momenti, rispetto ad una terna di riferimento, agenti sul sistema e di conseguenza un'espressione quantitativa della rotazione del corpo in questione sotto l'azione di momenti e forze esterne.
+		
+Procediamo ora a introdurre un fondamentale strumento per l'analisi della dinamica di un corpo: La conservazione del momento.
+
+\begin{minipage}{.5\textwidth}
+Dato un sistema meccanico generico nel piano in cui persistono forze interne al sistema ed esterne, come rappresentato in maniera semplificata dalla figura a fianco, è possibile scivere le relative equazioni di Newton:
+\[m_1\,\mathbf{a_1} = \mathbf{F_{21}} + \mathbf{F_{12}}\qquad;\qquad m_2\,\mathbf{a_2} = \mathbf{F_{12}}\]
+
+Eseguendo a questo punto il prodotto esterno membro a membro rispetto all'origine di un S.d.R fisso e sommando le due espressioni si ottiene:
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width=.7\textwidth]{chapter06/Immagine114}
+\end{minipage}
+
+\begin{minipage}{.5\textwidth}
+\begin{tabular}{rcclc}
+$\mathbf{OP_1}\wedge m_1\,\mathbf{a_1}$ &=& $\mathbf{OP_1} \wedge \mathbf{F_{21}}$ &$+\, \mathbf{OP_1}\wedge \mathbf{F_{31}}$&+\\
+&&&&\\
+$\mathbf{OP_2}\wedge m_2\,\mathbf{a_2}$ &=&$\mathbf{OP_2} \wedge \mathbf{F_{12}}$&&=\\
+&&&&\\
+\midrule
+&&&&\\
+$\sum_i$&=&0&$+\, \mathbf{OP_1}\wedge \mathbf{F_{31}}$&
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+Si osserva che anche in questo caso le forze $F_{12}$ e $F_{21}$ si elidono in quanto aventi stessa retta d'azione e di conseguenza medesimo momento (sono cioè due forze \textbf{uguali in modulo}, \textbf{di verso opposto} e con \textbf{medesima retta d'azione}).
+\end{minipage}
+\vspace{1mm}
+
+Siamo giunti dunque a dimostrare che:
+
+\begin{empheq}[box=%
+\fbox]{equation*}
+\sum_{i=1}^N\,\mathbf{OP_i}\,\wedge\,m_i\,\mathbf{a_i} = \mathbf{M}_0^{(e)}\quad\Leftarrow\text{Momento delle forze esterne}
+\end{empheq}
+
+Al fine di procedere alla dimostrazione della conservazione della quantità di moto ricordiamo le principali relazioni che verranno utilizzate nel decorso della dimostrazione stessa:
+\begin{gather*}
+\td{}{t}\sum_{i=1}^N m_i\,\mathbf{v_i} = \mathbf{Q}\qquad;\qquad\td{\mathbf{Q}}{t} = \mathbf{R} ^{(e)}\qquad;\qquad m\,\mathbf{a_G} = \mathbf{R}^{(e)}
+\end{gather*}
+
+Il momento della quantità di moto rispetto all'origine di un S.d.R. (O, non necessariamente fisso) è definito come:
+\[\mathbf{K_O} = \sum_{i=1}^{N} \mathbf{OP_i}\wedge m_i\,\mathbf{v_i} \]
+
+Deriviamo ora tale relazione al fine di trarre alcune conclusioni sul suo risultato:
+
+\[
+\td{\mathbf{K_O}}{t} = \sum_{i=1}^N \td{}{t}(\mathbf{OP_i}\wedge m_i\,\mathbf{v_i}) = \sum_{i=1}^N \Bigl[ \mathbf{OP_i}\wedge m_i\,\td{\mathbf{v_i}}{t} + \td{\mathbf{OP_i}}{t}\wedge m_i\,\mathbf{v_i}\Bigr]
+\]
+
+La derivata $\td{\mathbf{OP_i}}{t}$ non è altro che la differenza tra la velocità del punto $P_i$ rispetto alla velocità dell'origine del S.d.R. scelto.
+
+\begin{align*}
+\td{\mathbf{K_O}}{t} &= \sum_{i=1}^N \Bigl[\mathbf{OP_i} \wedge m_i\,\mathbf{a_i} + (\mathbf{v_i} - \mathbf{v_O})\wedge m_i\,\mathbf{v_i}\Bigr]\\
+&= \sum_{i=1}^N \Bigl[ \mathbf{OP_i}\wedge m_i\,\mathbf{a_i} + \cancel{\mathbf{v_i}\wedge m_i\,\mathbf{v_i}} - \mathbf{v_O}\wedge m_i\,\mathbf{v_i} \Bigr]\qquad (\mathbf{v_i}\parallel\mathbf{v_i} \Rightarrow \mathbf{v_i} \wedge \mathbf{v_i} = 0)\\
+&= \sum_{i=1}^N (\mathbf{OP_i}\wedge m_i\,\mathbf{a_i}) + \sum_{i=1}^N (-\,\mathbf{v_O}\wedge m_i\,\mathbf{v_i})\qquad \mathbf{v_O}\,\text{è indipendente da ``i''}\\
+&= \sum_{i=1}^N (\mathbf{OP_i}\wedge m_i\,\mathbf{a_i})\,-\,\mathbf{v_O}\wedge \sum_{i=1}^N (m_i\,\mathbf{v_i})\\
+&= \sum_{i=1}^N (\mathbf{OP_i}\wedge m_i\,\mathbf{a_i})\,-\,\mathbf{v_O}\wedge\,\mathbf{Q_O}\\
+&= M_O -\,\mathbf{v_O}\wedge \mathbf{Q_O}
+\end{align*}
+
+Invertendo la relazione appena ricavata possiamo ottenere una nuova definizione di momento:
+\[\mathbf{M_O} = \sum_{i=1}^N \mathbf{OP_i}\wedge m_i\,\mathbf{a_i} = \td{\mathbf{K_O}}{t} + \mathbf{v_O}\wedge \mathbf{Q_O}\]
+
+Dalla formula appena ricavata possono essere compiute alcune semplificazioni dalla scelta opportuna del S.d.R. scelto per il relativo calcolo:
+\[
+\begin{dcases}
+\td{\mathbf{K_O}}{t} = \mathbf{M_O}^{(e)}\qquad \text{se}\, \mathbf{v_O} = 0\\
+\td{\mathbf{K_G}}{t} = \mathbf{M_G} ^{(e)}\qquad \text{se O = G} 
+\end{dcases}
+\]
+
+Le equazioni appena riportate prendono il nome di \textbf{Equazioni di Eulero}
+
+In conclusione: nel caso piano le equazioni di Newton-Eulero sono:
+\begin{gather*}
+	M\,\ddot{x_G} = R_x^{(e)}\\
+	M\,\ddot{y_G} = R_y^{(e)}\\
+	\\
+	\mathbf{K_O} = \sum_{i=1}^N (x_{Pi}\,\mathbf{i}\,+\,y_{Pi}\,\mathbf{j})\wedge m_i\,(\mathbf{v_G}\,+\und{\omega}\wedge\,\mathbf{GP_i})
+\end{gather*}
+dove
+\begin{itemize}
+\item \[\mathbf{OP_i} = x_{Pi}\,\mathbf{i}\,+\,y_{Pi}\,\mathbf{j}\]
+\item per un corpo rigido la velocità di un generico punto P è pari a 
+\[\mathbf{v_i} = \mathbf{v_G}\,+\und{\omega}\wedge\,\mathbf{GP_i}\]
+\end{itemize}
+
+Se, dunque, si sceglie il punto O coincidente con il baricentro (O=G)
+\begin{align*}
+\mathbf{K_G} &= \sum_{i=1}^N \mathbf{GP_i}\wedge m_i\,\mathbf{v_i}\\
+&= \sum_{i=1}^N \mathbf{GP_i}\wedge (\mathbf{v_G} + \und{\omega}\wedge \mathbf{GP_i})\\
+&= \cancel{\sum_{i=1}^N m_i\,\mathbf{GP_i}\wedge \mathbf{v_G}} + \sum_{i=1}^N m_i\,\mathbf{GP_i}\wedge (\und{\omega}\wedge\mathbf{GP_i})
+\end{align*}
+
+Si noti che il primo termine si elide in quanto la defininzione di baricentro è:
+\[\sum_i m_i\,\mathbf{OP_i} = M\,\mathbf{OG}\qquad\text{ma  O=G per ipotesi}\]
+
+svolgendo i prodotti interni del secondo termine si ottiene:
+\begin{align*}
+\und{\omega}\wedge\mathbf{GP_i} &= 
+\begin{vmatrix}
+i&j&k\\
+0&0&\omega\\
+x_i&y_i&0\\
+\end{vmatrix}
+= (-\omega\,y_i, \omega\,x_i,0)\\
+\\
+\mathbf{GP_i}\wedge \omissis &= 
+\begin{vmatrix}
+	i&j&k\\
+	x_i&y_i&0\\
+	-\omega\,y_i&\omega\,x_i&0
+\end{vmatrix}
+= (0,0, \omega(x_i^2 + y_i^2))
+\end{align*}
+
+di conseguenza la formula ricavata precedentemente si può esprimere nel seguente modo:
+\[
+\mathbf{K_G} = \sum_{i=1}^N m_i\,\omega\,(x_i^2 + y_i^2)\,\mathbf{k} = \omega\,I_z\,\mathbf{k}
+\]
+
+dove $I_z = \sum_{i=1}^N m_i\,(x_i^2 + y_i^2)$ è il momento d'inerzia rispetto all'asse z
+
+In conclusione:
+\begin{itemize}
+\item se l'origine del S.d.R. scelto coincide con il baricentro, vale che:
+\begin{gather*}
+\mathbf{K_G} = \omega\,I_{zG}\,\mathbf{k}\qquad;\qquad \td{\mathbf{K_G}}{t} = \dot{\omega}\,I_{zG}\,\mathbf{k} = \mathbf{M_G}^{(e)}
+\end{gather*}
+\item se l'origine del S.d.R scelto è fisso vale che;
+\[\mathbf{K_O} = \omega\,I_{zO}\,\mathbf{k}\]
+\item altrimenti se l'origine del S.d.R. scelto non è fisso e non coincide con il baricentro bisogna utilizzare la formula completa
+\end{itemize}
+\newpage
+
+\subsection{Esempi di applicazione delle equazioni di Newton-Eulero nel piano}
+
+	Vediamo come condurne lo studio tramite un esempio, in cui consideriamo il manovellismo di spinta.
+	\vspace{1mm}
+
+		\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width = .8\textwidth]{chapter06/Immagine103}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{.5\textwidth}
+		Del meccanismo di spinta proposto a fianco sono note: le lunghezze dei membri che lo compongono, i baricentri dei diversi corpi e le rispettive masse. Il fine dell'analisi dinamica del meccanismo è quella di trovare le reazioni che il telaio esercita sul meccanismo.
+		
+		A tal fine si utilizzeranno le equazioni di Newton-Eulero, che prevedono lo studio individuale dei diversi corpi, nonché le forze e i momenti a cui ognuno di essi è soggetto.
+		\end{minipage}
+		
+		Si procede dunque a individuare i tre corpi di cui il meccanismo di spinta è composto e immaginare di separarli, nel seguente modo:
+		\vspace{1mm}
+		
+		\begin{minipage}{.33\textwidth}
+		\centering
+		\includegraphics[width=.4\textwidth]{chapter06/Immagine104}
+		\end{minipage}
+		\begin{minipage}{.33\textwidth}
+		\centering
+		\includegraphics[width=.4\textwidth]{chapter06/Immagine105}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{.33\textwidth}
+		\centering
+		\includegraphics[width=.4\textwidth]{chapter06/Immagine106}
+\end{minipage}
+\vspace{1mm}
+
+Prima di procedere con l'analisi dinamica dei corpi alcune osservazioni e precisazioni devono essere compiute:
+\begin{itemize}
+\item Generalmente nelle macchine veloci l'inerzia dei corpi come la forza peso possono essere trascurate;
+\item I perni e le cerniere dovranno applicare, generalmente, 2 forze grandi abbastanza per ritenere la relativa manovella ferma; se ciò è verificato la cerniera in questione è a tutti gli effetti un \textbf{vincolo liscio}: ovvero vincoli che introducono forze per lo stretto necessario;
+\end{itemize}
+
+Si può dunque procedere con lo studio della dinamica dei corpi in esame:
+\begin{enumerate}
+\item \textbf{Corpo 1 \& 2: Manovella e Biella}
+
+Procediamo a introdurre una forza per ogni G.d.L. che cancelliamo: 
+
+Se il vincolo è liscio non impedisce la rotazione della manovella e non applica momento (in realtà molti vincoli non sono lisci)
+
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=.7\textwidth]{chapter06/Immagine107}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=.7\textwidth]{chapter06/Immagine108}
+\end{minipage}
+
+\begin{minipage}{.5\textwidth}
+\begin{align*}
+	m_1\,\ddot{x_{G1}} &= R_x^e = R_3 + R_5\\
+	m_1\,\ddot{y_{G1}} &= R_y^e = R_4 + R_6\\
+	I_{1A}\,\ddot{\theta_1} &= M(t) + M_A^{(R_5)} + M_A^{(R_6)}
+\end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+\begin{align*}
+	m_2\,\ddot{x_{G2}} &= R_9 + R_7\\
+	m_2\,\ddot{y_{G2}} &= R_8 + R_{10}\\
+	I_{2G_2}\,\ddot{\theta_2} &= M_{G_2}^{(R_9)} + M_{G_2}^{(R_{10})} + M_{G_2}^{(R_8)} + M_{G_2}^{(R_7)}
+\end{align*}
+\end{minipage}
+
+
+
+\item \textbf{Corpo 3: Pattino}
+
+\begin{minipage}{.4\textwidth}
+	\centering
+	\includegraphics[width = .5\textwidth]{chapter06/Immagine109}
+\end{minipage}
+\hfill
+\begin{minipage}{.55\textwidth}
+\begin{align*}
+m_3\,\ddot{x_{G3}} &= F + R_{11}\\
+m_3\,\ddot{y_{G3}} &= R_{14} + R_{12}\\
+I_{3G_3}\,\ddot{\theta_3} &= M_{13}
+\end{align*}
+\end{minipage}
+\end{enumerate}
+
+esplicitiamo ora la somma dei momenti con riferimento alle reazioni vincolari introdotte:
+
+\begin{itemize}
+\item $M_A^{(R_5)}$ e $M_A^{(R_6)}$:
+
+\begin{gather*}
+	M_A^{(R_5,R_6)} = 
+	\begin{vmatrix}
+	i&j&k\\
+	r\,\cos{\theta_1}&r\,\sin{\theta_1}&0\\
+	R_5&R_6&0
+	\end{vmatrix}
+	= (0,0,R_6\,\cos{\theta_1} - R_5\,r\,\sin{\theta_1})\\
+	I_{G1}\,\ddot{\theta_1} = M(t) - R_5\,r\,\sin{\theta_1} + R_6\,\cos{\theta_1}
+\end{gather*}
+
+\item $M_{G2}^{B}$ e $M_{G2}^{C}$
+
+\begin{align*}
+	M_{G2}^{B} &= 
+	\begin{vmatrix}
+		i&j&k\\
+		-\,a\,\cos{\theta_2}&-\,a\,\sin{\theta_2}&0\\
+		R_7&R_8&0
+	\end{vmatrix}
+	= (0,0, -aR_8\,\cos{\theta_2}+aR_7\,\sin{\theta_2})\\
+	M_{G2}^{C} &= 
+	\begin{vmatrix}
+		i&j&k\\
+		b\,\cos{\theta_2}&b\,\sin{\theta_2}&0\\
+		R_9&R_{10}&0
+	\end{vmatrix}
+	= R_{10}\,b\,\cos{\theta_2} - R_9\,b\,\sin{\theta_2}
+\end{align*}
+\end{itemize}
+
+
+Il problema posto è un problema di dinamica inversa, ovvero: nota q(t) e di conseguenza le accelerazioni dei baricentri, che ricordiamo possono essere ricavate dall'analisi cinematica, si richiede di valutare le reazioni vincolari a telaio.
+
+Il sistema di 3*n equazioni in 3*n incognite, dove n è il numero di corpi in cui si è separato il sistema meccanico, porta ad una rappresentazione analitica delle reazioni vincolari in funzione del movente q(t).
+
+Il problema di dinamica inversa proposto, si limita a risolvere, di conseguenza, il seguente sistema di equazioni, a cui sono state applicate le sostituzioni $R_7 = -R_5$ e $R_8= -R_6$ in virtù del terzo principio della dinamica (azione e reazione).
+
+\[
+\begin{dcases}
+m_1\,\ddot{x_{G1}} = R_3 + R_5\\
+m_1\,\ddot{y_{G1}} = R_4 + R_6\\
+I_{1A}\,\ddot{\theta_1} = M(t) - R_5\,r\,\sin{\theta_1} + R_6\,r\,\cos{\theta_1}\\
+m_2\,\ddot{x_{G2}} = R_9 - R_5\\
+m_2\,\ddot{y_{G2}} = R_{10} - R_6\\
+I_{2G_2}\,\ddot{\theta_2} = a\,R_6\,cos{\theta_2}\,-\,a\,R_5\,\sin{\theta_2}+b\,R_{10}\,\cos{\theta_2}\,-\,b\,R_9\,\sin{\theta_2}\\
+m_3\,\ddot{x_{G3}} = F\,-\,R_9\\
+0 = R_{14} - R_{10}\\
+0 = M_{13}
+\end{dcases}
+\]
+
+Proponiamo un ulteriore esempio sulle modalità di trattazione dell'analisi dinamica di una motocicletta.
+
+Il sistema meccanico in questione può essere separato in tre corpi distinti che rappresentano rispettivamente la ruota anteriore e posteriore e il telaio.
+
+Procediamo a condurre l'analisi cinematica dei corpi sopra elencati:
+\begin{enumerate}
+\item \textbf{Corpo 1: Ruota posteriore}
+
+\begin{minipage}{.35\textwidth}
+\centering
+\includegraphics[width=.7\textwidth]{chapter06/Immagine110}
+\end{minipage}
+\hfill
+\begin{minipage}{.65\textwidth}
+La ruota è a contatto con il suolo, dunque, o si comporterà come una coppia a camma e scivolerà a contatto con l'asfalto, oppure rotolerà senza strisciare.
+
+Inoltre essa non può traslare verticalmente edeve avere una velocità puramente orizzontale (condizione per cui la ruota non si solleva dal suolo).
+\end{minipage}
+\vspace{1mm}
+
+Formulate tali premesse possiamo introdurre le seguenti forze:
+\begin{itemize}
+	\item la \textbf{Forza peso} del corpo in questione;
+	\item le due reazioni vincolari esercitate dalla coppia cinematica con il telaio (corpo 2);
+	\item le forze esterne agenti sulla ruota in questione ($M_{21}$ è il momento motore);
+\end{itemize}
+
+Per semplicità consideriamo che il baricentro sia posizionato esattamente nel centro della ruota, possiamo, dunque, scrivere le tre equazioni del moto rispetto al baricentro:
+
+\begin{align*}
+	m_1\,\ddot{x_1} &= R_{21x}+S\\
+	m_2\,\ddot{y_1} &= N_r + R_{21y} - m_1\,g\\
+	I_1\,\ddot{\theta_1} &= M_{21} + S\,r_1
+\end{align*}
+
+Qualora si volesse trovare le condizioni per cui le ruota non si stacchi da terra, basterebbe porre $\ddot{y_1} = 0$ e le rimanenti $\ddot{x_1}$ e $\ddot{\theta_1}$ sono legate dal voncolo di rotolamento:
+\[\ddot{x_1} = -\,\ddot{\theta_1}\,r\]
+
+\item \textbf{Corpo 3: Ruota anteriore}
+
+\begin{minipage}{.35\textwidth}
+\centering
+\includegraphics[width=.7\textwidth]{chapter06/Immagine111}
+\end{minipage}
+\hfill
+\begin{minipage}{.65\textwidth}
+Situazione identica, vi è la presenza di un momento esercitato dal telaio per la presenza del freno $M_{23}$.
+
+\begin{align*}
+m_3\,\ddot{x_3} &= R_{3x} + S_f\\
+m_3\,\ddot{y_3} &= N_f + R_{23y} -\,m_3\,g\\
+-\,I_3\,\cfrac{\ddot{x_3}}{r} &= M_{23} + S_f\,r_1
+\end{align*}
+\end{minipage}
+\newpage
+
+\item \textbf{Corpo 3: Telaio della motocicletta}
+
+\begin{center}
+	\includegraphics[width=.7\textwidth]{chapter06/Immagine112}
+\end{center}
+
+Il telaio presenta oltre alle forze tra ruota e telaio stesso, anche la forza peso del pilota ($m_2\,g$) e una componente di forza consierata orizzontale relativa alla resistenza areodinamica ($F_d$)
+
+\begin{align*}
+	m_2\,\ddot{x_2} &= R_{12x} + R_{32x} - F_d\\
+	\cancelto{0}{m_2\,\ddot{y_2}} &=  -\,m_2\,g\,+R_{12y} + R_{32y}\\
+	\cancelto{0}{I_2\,\ddot{\theta_2}} &= R_{12x}(h-r)\,+R_{32x}\,(h-r) + R_{32y}\,b - R_{12y}\,a + M_{12} + M_{32}
+\end{align*}
+\end{enumerate}
+
+Come è già noto le accelerazioni e le accelerazioni angolari considerate non nulle possono essere ricavate tramite l'analisi cinematica.
+
+Tramite il terzo principio della dinamica è possibile ridurre il numero di incognite presenti nelle equazioni proposte e ottenere un sistema di 9 equazioni in 9 incognite.
+
+\newpage
+\section{Equazioni di Newton-Eulero nello spazio}
+
+	\subsection{Equazioni di Newton}
+	
+		\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width=.95\textwidth]{chapter06/Immagine113}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+
+Le equazioni di Newton sono già state ricavate nei precedenti paragrafi.
+
+Queste, dato un generico corpo, complesso a piacere, di cui è nota la massa e il centro di gravità (a.k.a baricentro), permettevano di scrivere un sistema di tre equazioni che ne descrivino le relazioni tra l'accelerazione del corpo stesso con le forze agenti su di esso.
+
+Nello spazio questo sistema di 2 equazioni (di Newton) si estenderà a 3, ovvero:
+\begin{gather*}
+m\,\ddot{x_G} = R_x^{(e)}\qquad;\qquad m\,\ddot{y_G} = R_y^{(e)}\qquad;\qquad m\,\ddot{z_G} = R_z^{(e)} 
+\end{gather*}
+\end{minipage}
+
+Si noti che in realtà, tramite tali equazioni siamo in grado solo di prevedere la traslazione del corpo in esame, non la rotazione: è necessario dunque introdurre, a tal fine, le equazioni di Eulero nello spazio, la cui dimostrazione, simile a quella compiuta nel bidimensionale, è proposta di seguito.
+
+A tal fine scegliamo l'origine del nostro S.d.R. a cui riferire il momento della quantità di moto coincidente con il baricentro del sistema meccanico generico (O=G), inoltre assumiamo come ipotesi che i membri che compongono il sistema siano approssimabili come corpi rigidi
+\begin{align*}
+\mathbf{K_G} &= \sum_i \mathbf{GP_i}\,\wedge\,m_i\,\mathbf{v_i}\\
+&= \sum_i \mathbf{GP_i}\wedge\mathbf{v_G} + \sum_i \mathbf{GP_i}\wedge (\und{\omega}\wedge \mathbf{GP_i})\\
+&= \cancelto{0}{\sum_i m_i\,\mathbf{GP_i}\wedge \mathbf{v_G}} + \sum_i m_i\,\mathbf{GP_i}\wedge (\und{\omega}\wedge \mathbf{GP_i})
+\end{align*}
+
+Procediamo come fatto per ricavare le equazioni di Eulero nel bidimensionale a svolgere i prodotti interni:
+\begin{align*}
+	\und{\omega}\wedge\mathbf{GP_i} &= 
+	\begin{vmatrix}
+		i&j&k\\
+		\omega_x&\omega_y&\omega_z\\
+		x_i&y_i&z_i
+	\end{vmatrix}
+	= \begin{tabular}{ll}$\mathbf{i}$&$(\omega_y\,z_i - \omega_z\,y_i)$\\
+	$\mathbf{j}$&$(\omega_z\,x_i - \omega_x\,z_i)$\\
+	$\mathbf{k}$&$(\omega_x\,y_i - \omega_y\,x_i)$
+	\end{tabular}\\
+	\mathbf{GP_i}\wedge(\und{\omega}\wedge\mathbf{GP_i})&=
+	\begin{vmatrix}
+	i&j&k\\
+	x_i&y_i&z_i\\
+	(\omega_y\,z_i - \omega_z\,y_i)&(\omega_z\,x_i - \omega_x\,z_i)&(\omega_x\,y_i - \omega_y\,x_i)
+	\end{vmatrix}
+	= \begin{tabular}{ll}
+	$\mathbf{i}$&$ (y_i\,(\omega_x\,y_i\,-\,\omega_y\,x_i )\,-\,z_i\,(\omega_z\,x_i\,-\,\omega_x\,z_i)) $\\
+	$\mathbf{j}$&$(z_i\,(\omega_y\,z_i\,-\,\omega_z\,y_i)\,-\,x_i\,(\omega_x\,y_i\,-\,\omega_y\,x_i))$\\
+	$\mathbf{k}$&$(x_i\,(\omega_z\,x_i\,-\,\omega_x\,z_i)\,-\,y_i\,(\omega_y\,z_i\,-\,\omega_z\,y_i))$\\
+	\end{tabular}\\
+	\\
+	&=  \begin{tabular}{lccc}
+	$\mathbf{i}$&$ \omega_x\,(y_i^2\,+\,z_i^2)$&$-\omega_y\,x_i\,y_i$&$-\,\omega_z\,x_i\,z_i $\\
+	$\mathbf{j}$&$-\,\omega_x\,x_i\,y_i$&$\omega_y\,(z_i^2\,+\,x_i^2)$&$-\,\omega_z\,y_i\,z_i$\\
+	$\mathbf{k}$&$-\,\omega_x\,z_i\,x_i$&$-\,\omega_y\,y_i\,z_i$&$\omega_z\,(x_i^2\,+\,y_i^2)$\\
+	\end{tabular}
+\end{align*}
+
+Che nell'originale definizione di mometo della quantità di moto rispetto al baricentro del sistema meccanico, assume la forma di:
+
+\[
+\mathbf{K_G} = 
+\begin{tabular}{lccc}
+$\mathbf{i}$&$\omega_x\,\sum_i\,m_i\,(y_i^2\,+\,z_i^2)$&$-\,\omega_y\,\sum_i\,m_i\,x_i\,y_i$&$-\,\omega_z\,\sum_i\,m_i\,x_i\,z_i$\\
+$\mathbf{j}$&$\omega_x\,\sum_i\,m_i\,x_i\,y_i$&$\omega_y\,\sum_i\,m_i\,(x_i^2\,+\,z_i^2)$&$-\,\omega_z\,\sum_i\,m_i\,y_i\,z_i$\\
+$\mathbf{k}$&$-\,\omega_x\,\sum_i\,m_i\,z_i\,x_i$&$-\,\omega_y\,\sum_i\,m_i\,y_i\,z_i$&$\omega_z\,\sum_i\,m_i\,(x_i^2\,+\,y_i^2)$
+\end{tabular}
+\]
+
+Esattamente come abbiamo osservato nella dimostrazione dell'Equazione di Eulero nel piano notiamo la presenza dei momenti d'inerzia che verranno indicati secondo la notazione:
+\begin{gather*}
+	I_{xx} = \sum_i\,m_i\,(y_i^2\,+\,z_i^2)\qquad;\qquad I_{xy} = \sum_i\,m_i\,x_i\,y_i
+\end{gather*}
+
+Possiamo in questo modo scrivere in forma matriciale la relazione dell'equazione di Eulero che lega i momenti delle quantità di moto alle velocità angolari:
+
+\begin{align*}
+	\mathbf{K_G} &= \M{I_{xx}&-I_{xy}&-I_{xz}\\-I_{xy}&I_{yy}&-I_{yz}\\-I_{xz}&-I_{yx}&I_{zz}}\,\B{\omega_x\\\omega_y\\\omega_z}\\
+	&= \mathbf{\mathbf{I}}\,\,\und{\omega}
+\end{align*}
+
+\subsection{Esempi applicativi}
+
+L'utilizzo delle equazioni di Newton-Eulero nello spazio trovano grande impiego soprattutto in:
+\begin{enumerate}[$\longrightarrow$]
+\item Macchine generatrici di energia
+\item Organi in rotazione ad alta velocità
+\item Giroscopi
+\item Ruote di automobili
+\end{enumerate}
+
+Vediamo applicate tali equazioni nella modellazione di un organo in rotazione:
+
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width=.7\textwidth]{chapter06/Immagine115}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+Il sistema rotativo preso in considerazione presenta un asse di rotazione in corrispondenza dell'albero passante, il quale è vincolato in un punto ideale A da due coppie prismatiche e in un punto ideale B da 3 coppie prismatiche che ne limitano la traslazione.
+\newline
+
+L'albero gira con velocità angolare $\omega$ e il piatto ha sezione circolare (la prospettiva inganna ;) ;) )
+\newline
+
+Si supponga anche che per un errore di lavorazione il baricentro non sia in corrispondenza dell'asse di rotazione bensì si trovi nel centro della sezione del piatto rotante.
+
+L'obiettivo finale dell'analisi dinamica di tale sistema è quello di determinare la posizione di una massa che equilibri l'eccentricità del meccanismo.
+
+Fissato il S.d.R. in corrispondenza dell'intersezione tra l'asse di rotazione e il piano del piatto rotante, si è proceduto con i ben noti calcoli
+\end{minipage}
+
+Osservazione: se il baricentro non è sull'asse di rotazione gli eventuali cuscinetti risulteranno sollecitati per compensare l'eccentricità, il che comporta vibrazioni, rumore, usura dei componenti e dei cuscinetti e una perdita di prestazione.
+\vspace{1mm}
+
+\begin{minipage}{.5\textwidth}
+In virtù della simmetria cilindrica del componente facciamo uso di una vista dall'alto per valutare la distanza del baricentro dall'origine del S.d.R. scelto, che verrà sfruttata per valutare le accelerazioni del baricentro presenti nelle equazioni di Newton(-Eulero):
+\begin{gather*}
+\mathbf{OG} = \B{x_G\\y_G} = \B{e\,\cos{\theta(t)}\\e\,\sin{\theta(t)}}
+\end{gather*}
+
+Una volta ricavate le accelerazioni, infatti, sarà possibile risolvere le seguenti equazioni (premessa: forza peso trascurabile):
+\begin{gather*}
+m\,a_x = R_{Ax} + R_{Bx}\\
+m\,a_y = R_{Ay} + R_{By}\\
+m\,a_z = R_{Bz}
+\end{gather*}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width=.75\textwidth]{chapter06/Immagine116}
+\end{minipage}
+
+\begin{minipage}{.5\textwidth}
+\begin{tabular}{lrcl}
+Velocità&:&&\\
+&$\dot{x_G}$&=&$-\,\dot{\theta(t)}\,e\,\sin{\theta(t)}$\\
+&$\dot{y_G}$&=&$\,\,\dot{\theta(t)}\,e\,\cos{\theta(t)}$\\
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+\begin{tabular}{lrcl}
+Accelerazioni&:&&\\
+&$\ddot{x_G}$&=&$-\,\ddot{\theta(t)}\,e\,\sin{\theta(t)}\,-\,\dot{\theta(t)}^2\,e\,\cos{\theta(t)}$\\
+&$\ddot{y_G}$&=&$\,\,\ddot{\theta(t)}\,e\,\cos{\theta(t)}\,-\,\dot{\theta(t)}^2\,e\,\sin{\theta(t)}$
+\end{tabular}
+\end{minipage}
+\vspace{1mm}
+
+che permette di scrivere:
+
+\[
+\B{R_{Ax} + R_{Bx}\\R_{Ay} + R_{By}} = -\,m\,e\,\omega^2\,\B{\cos{\theta(t)}\\\sin{\theta(t)}} + m\,e\,\ddot{\theta(t)}\,\B{-\,\sin{\theta(t)}\\\cos{\theta(t)}}
+\]
+
+Dalla rappresentazione delle forze sopra ricavate possiamo concludere che la forza centrifuga di modulo $-\,m \,e\,\omega^2$ è parallela al vettore eccentricità ($OG$) e di verso opposto, mentre la forza di modulo $m\,e\,\ddot{\theta}$ è perpendicolare.
+
+La condizione in cui ci trovamo è detta di \textbf{sbilanciamento statico}: qualora, infatti, eseguissimo un test di statica, il baricentro si orienterebbe sul punto più basso.
+
+Per bilanciare il rotore si può aggiungere una massa sulla retta congiungente OG al fine di riportare il baricentro del sistema meccanico sull'asse di rotazione.
+
+Il nuovo baricentro sarà dunque posto ad una distanza:
+\[G' = \dfrac{e\,m\,-\,m'\,r}{m\,+\,m'}\]
+
+Ponendo G'=O è possibile calcolare la massa necessaria posta ad una distanza ''r'' dall'asse di rotazione a bilanciare la presenza dell'ecentricità
+
+\section{Considerazioni aggiuntive sulle equazioni di Eulero}
+
+	Tramite l'introduzione del tensore dei momenti d'inerzia $\mathbf{\mathbf{I}}$ abbiamo potuto esprimere una relazione che leghi la velocità angolare di un corpo rigido con il rispettivo momento della quantità di moto rispetto al baricentro del sistema meccanico in esame. Ovvero:
+	\begin{align*}
+	\mathbf{K_G} &= [\,I\,]\,\und{\omega} \\
+	\B{K_{Gx}\\K_{Gy}\\K_{Gz}} &= \M{I_{xx}&-I_{xy}&-I_{xz}\\-I_{xy}&I_{yy}&I_{yz}\\-I_{xz}&-I_{yz}&I_{zz}}\,\B{\omega_x\\\omega_y\\\omega_z}
+\end{align*}
+	dove le componenti del tensore dei momenti d'inerzia si trovano nelle forme:
+	\begin{gather*}
+	I_{xx} = \sum_i m_i\,(y_i^2\,+\,z_i^2)\qquad;\qquad I_{xy} = \sum_i m_i\,x_i\,y_i
+	\end{gather*}
+	
+	Alcune osservazioni possono essere formulate riguardo a tale relazione:
+	\begin{itemize}
+	\item L'analoga formula dell'equazione di Newton a cui generalmente si paragona l'equazione vettoriale sopra riportata è
+	\[\mathbf{Q} = M\,\mathbf{v_G}\]
+	in cui la massa \textbf{M} funge da quantità scalare di proporzionalità tra le due grandezze vettoriali in gioco.
+	
+	Ciò implica che la velocità del baricentro ($\mathbf{v_G}$) e la quantità di moto del sistema meccanico ($\mathbf{Q}$) siano due vettori paralleli.
+	
+	\item La stessa proprietà di parallelismo non è sempre verificata nel caso dell'equazioni di Eulero: infatti, il tensore d'inerzia non è una grandezza scalare (come era la massa M) o vettoriale, bensì un operatore.
+	
+	In generale, dunque, non varrà che il vettore momento della quantità di moto ($\mathbf{K_G}$) sia parallelo alla velocità angolare ($\und{\omega}$).
+	
+	Rinforziamo questo concetto considerando il caso in cui la velocità angolare comprenda solo una componente lungo z:
+	
+	\[
+	\B{K_{Gx}\\K_{Gy}\\K_{Gz}} =  \M{I_{xx}&-I_{xy}&-I_{xz}\\-I_{xy}&I_{yy}&I_{yz}\\-I_{xz}&-I_{yz}&I_{zz}}\,\B{0\\0\\\omega_z} = \B{-\,I_{xz}\,\omega_z\\-\,I_{yz}\,\omega_z\\I_{zz}\,\omega_z} 
+	\]
+	Come si può infatti evincere, nonostante $\und{\omega}$ abbia solo componenti lungo z, lo stesso non può essere detto di $\mathbf{K_G}$. Affinché effettivamente i due vettori in gioco siano paralleli, i momenti d'inerzia ($I_{xz}$ e $I_{yz}$) si devono annullare.
+	\end{itemize}
+
+		Cerchiamo dunque per quali condizioni i vettori $\und{\omega}$ e $\mathbf{K_G}$ siano paralleli.
+		
+		Più in particolare, vorremmo trovare una condizione sulla velocità angolare, che permetta di ottenere la relazione di parallelismo. Tale condizione può essere ottenuta risolvendo la seguente equazione matriciale:
+		\[[\,I\,]\,\{\,\omega\,\} = \lambda\,\{\,\omega\,\}\]
+		Poiché il tensore dei momenti d'inerzia è di ordine 3 ed è simmetrico, esistono 3 autovalori ($\lambda_1,\, \lambda_2,\, \lambda_3$)  e 3 corrispettivi autovettori ($\mathbf{U_1},\, \mathbf{U_2}\, ,\, \mathbf{U_3}$) tali per cui $\mathbf{K_G}\parallel \und{\omega}$.
+		
+		Inoltre i tre autovalori formano una base ortogonale e definiscono i tre assi principali d'inerzia.
+
+	Lungo tali assi il tensore d'inerzia è diagonale:
+	\[
+	\M{I_1&0&0\\0&I_2&0\\0&0&I_{3}}
+	\]
+	
+	Dalla formulazione del tensore d'inerzia lungo gli assi principali d'inerzia possiamo distinguere tre casi:
+	\begin{enumerate}
+		\item I 3 momenti d'inerzia principali sono diversi ($I_1 \ne I_2 \ne I_3$)
+		\item 2 momenti principali d'inerzia sono uguali: condizione tipica dei giroscopi dove si osserva la presenza di un asse polare diverso da qualsiasi asse d'inerzia ortogonale allo stesso (cfr. tutti i corpi a simmetria assiale)
+		\item I 3 momenti principali d'inerzia sono uguali ($I_1 = I_2 = I_3$) $\,\,\Longleftarrow\,\,$ \textbf{momento d'inerzia sferico} 
+	\end{enumerate}
+	
+	In generale tuttavia, come precedentemente evinto dalle considerzioni fatte per l'equazione $\mathbf{K_G} = \mathbf{\mathbf{I}}\,\und{\omega}$, il tensore d'inerzia è generalmente pieno, ma ha sempre 3 autovalori reali e 3 autovettori mutualmente ortogonali. Una volta diagonalizzata, tuttavia, i momenti d'inerzia principali presenti sulla diagonale del tensore sono sempre positivi (\textbf{matrice definita positiva}) e tale proprietà comporta che tutti gli autovalori saranno positivi.
+	
+	\subsection{Momenti d'inerzia principale su una terna mobile}
+	Con riferimento ad una terna mobile, i tensori d'inerzia sono calcolati rispetto ad un S.d.R. solidale al corpo e di conseguenza risulteranno costanti in quanto i punti del corpo (rigido) hanno tutti coordinate costanti (cfr. definizione momento d'inerzia).
+	
+	Dalla seconda equazione cardinale della dinamica:
+	\[\td{\mathbf{K_O}}{t} + \mathbf{v_O}\wedge \mathbf{Q} = \mathbf{M_O}\]
+	Qualora l'origine del S.d.R scelto sia fisso ($\mathbf{v_O} = 0$) o l'origine del S.d.R. sia coincidente con il baricentro (O = G) l'equazione appena esposta si semplifica in quanto il prodotto esterno si azzera ($\mathbf{v_O}\wedge\mathbf\und{Q} = 0$).
+	
+	Sfruttiamo dunque questa caratteristica e l'equazione di Eulero per valutare i momenti rispetto ad un S.d.R. mobile e solidale al corpo in esame con origine nel baricentro del sistema meccanico (più in particolare sfrutteremo l'equazione di Eulero per ricavare la derivata dei momenti della quantità di moto rispetto al S.d.R. scelto).
+	
+	\[	\mathbf{K_G} = \mathbf{\mathbf{I}}\,\und{\omega}\]
+	
+	Procediamo dunque a scrivere l'equazione di Eulero rispetto ad un S.d.R. solidale al corpo (non necessariamente coincidente con gli assi principali d'inerzia):
+	
+Il primo termine dell'equazione (lhs) può essere, sotto tali ipotesi, espresso come:
+	\[\mathbf{K_G} = K_{Gx} \,\mathbf{i}\,+\,K_{Gy}\,\mathbf{j}\,+\,K_{Gz}\,\mathbf{k}\]
+	Tramite l'uguaglianza di Eulero e noto che alla luce delle ipotesi fatte a priori le componenti del tensore d'inerzia sono costanti:
+	\[K_{Gx} = I_{xx}\,\omega_x\,-\,I_{xy}\,\omega_y\,-\,I_{xz}\,\omega_z\]
+	
+Eseguendone dunque la derivata per una singola componente di ($\mathbf{K_G}$), si ottiene:
+\[\td{K_{Gx}}{t} = I_{xx}\,\dot{\omega_x}\,-\,I_{xy}\,\dot{\omega_y}\,-\,I_{xz}\,\dot{\omega_z}\]
+	ripetendo lo stesso processo per gli altri elementi del vettore in esame:
+	\begin{align*}
+	\td{\mathbf{K_G}}{t} = \,&\dot{K_{Gx}}\,\mathbf{i}\,+\,\dot{K_{Gy}}\,\mathbf{j}\,+\,\dot{K_{Gz}}\,\mathbf{k}\\
+							  &K_{Gx}\,\dot{\mathbf{i}}\,+\,K_{Gy}\,\dot{\mathbf{j}}\,+\,K_{Gz}\,\dot{\mathbf{k}}\\
+							  = \,&\dot{K_{Gx}}\,\mathbf{i}\,+\,\dot{K_{Gy}}\,\mathbf{j}\,+\,\dot{K_{Gz}}\,\mathbf{k}\\
+							  & K_{Gx}\,\und{\omega}\wedge\mathbf{i}\,+\,K_{Gy}\,\und{\omega}\wedge\mathbf{j}\,+\,K_{Gz}\,\und{\omega}\wedge\mathbf{k}\qquad\leftarrow \text{cfr. Formule di Poisson}
+	\end{align*}
+	che in forma matriciale può essere scritta:
+	\[\B{\dot{K_x}\\\dot{K_y}\\\dot{K_z}} = \Bigl[\quad I\quad \Bigr]\,\B{\dot{\omega_x}\\\dot{\omega_y}\\\dot{\omega_z}} = \mathbf{\mathbf{I}}\,\,\dot{\und{\omega}}\]
+	In conclusione, dunque, si ha che:
+	\begin{align*}
+	\td{\mathbf{K_G}}{t} &= \mathbf{M_G^{(e)}}\\
+	&= I\,\dot{\und{\omega}} + \und{\omega}\,\wedge\,\mathbf{K_G}\\
+	&= I\,\dot{\und{\omega}}\,+\, \und{\omega}\,\wedge\,I\,\und{\omega}
+	\end{align*}
+	In questa espressione si possono riconoscere:
+	\begin{itemize}
+	\item Il tensore d'inerzia per l'accelerazione angolare ($I\,\dot{\und{\omega}}$)
+	\item L'effetto di trascinamento del S.d.R. scelto ($\und{\omega}\,\wedge\,\mathbf{K_G}$) 
+	\end{itemize}
+	
+	Il prodotto esterno non è molto operativo: possiamo cercare una matrice \textbf{P} che premoltiplicata per il secondo termine del prodotto esterno ritorni lo stesso risultato.
+	
+	\[
+		\mathbf{a}\,\wedge\,\mathbf{b} = \begin{vmatrix}i&j&k\\a_x&a_y&a_z\\b_x&b_y&b_z\end{vmatrix} = \begin{tabular}{lc}$\mathbf{i}$&$a_y\,b_z\,-\,a_z\,b_y$\\$\mathbf{j}$&$a_z\,b_x\,-\,a_x\,b_z$\\$\mathbf{k}$&$a_x\,b_y\,-\,a_y\,b_x$\end{tabular} = \M{0 & -a_z & a_y\\a_z&0&-a_x\\a_y&a_x&0}\,\B{b_x\\b_y\\b_z}
+	\]
+
+	Da tale osservazione possiamo, di conseguenza, riscrivere l'espressione per il momento rispetto al baricentro in un S.d.R. solidale al corpo:
+	\[\mathbf{M_O}^{(e)} = \leftidx{\B{M_x\\M_y\\M_z}}{^{(e)}_G} = \Bigl[\quad I\quad \Bigr] \,\leftidx{\B{\omega_x\\\omega_y\\\omega_z}}{_G}\,+\,\M{0&-\omega_z&\omega_y\\\omega_z&0&-\,\omega_x\\-\,\omega_y&\omega_x&0}\,\Bigl[\quad I\quad \Bigr]\,\leftidx{\B{\omega_x\\\omega_y\\\omega_z}}{_G}\]
+	
+	\section{Applicazione: Rotori con sbilanciamento dinamico}
+	\begin{minipage}{.45\textwidth}
+	\centering
+	\includegraphics[width=.95\textwidth]{chapter06/Immagine117}
+		\end{minipage}
+		\hfill
+		\begin{minipage}{.55\textwidth}
+			Consideriamo il sistema meccanico rappresentato in figura in cui il moto rotatorio è localizzato attorno ad un asse fisso baricentrico, ma non principale d'inerzia.
+			
+			Esso si compone di 3 elementi:
+			\begin{itemize}
+			\item un corpo a simmetria cilindrica/assiale a cui è applicato una velocità angolare lungo l'asse di simmetria;
+			\item due pessetti che si estendono lungo la direzione radiale del cilindro in modo tale da mantenere il baricentro del sistema nel medesimo punto, ma facendo perdere la simmetria al sistema.
+			\end{itemize}
+			La perdita di simmetria del sistema, fa sì che la direzione del vettore velocità angolare non coincida con un asse principale d'inerzia.
+			
+			Definiamo due sistemi di riferimento con medesima origine, uno fisso e uno mobile (ovvero solidale al sistema meccanico in esame).
+			
+			Si richiede di valutare le reazioni vincolari di momento che i vincoli posti agli estremi (A e B) devono sopportare in virtù del fatto che la rotazione non avviene lungo un asse principale d'inerzia.
+		\end{minipage}
+		\vspace{0.4mm}
+
+	Procediamo alla scrittura della legge del moto per mezzo della seconda equazione cardinale della dinamica:
+	\begin{align*}
+	\leftidx{\B{M_x\\M_y\\M_z}}{_G} &= \M{I_{xx}&-\,I_{xy}&-\,I_{xz}\\-\,I_{xy}&I_{yy}&-\,I_{yz}\\-\,I_{xz}&-\,I_{yz}&I_{zz}}\,\B{0\\0\\\dot{\omega_z}} + \M{0&-\,\omega_z&0\\\omega_z&0&0\\0&0&0}\, \M{I_{xx}&-\,I_{xy}&-\,I_{xz}\\-\,I_{xy}&I_{yy}&-\,I_{yz}\\-\,I_{xz}&-\,I_{yz}&I_{zz}}\,\B{0\\0\\\omega_z}\\
+	&= \B{-\,I_{xz}\\-\,I_{yz}\\I_{zz}}\,\dot{\omega_z} + \M{0& -\,\omega_z^2&0\\\omega_z^2&0&0\\0&0&0}\,\B{-\,I_{xz}\\-\,I_{yz}\\I_{zz}}
+	\end{align*}
+	
+	che in forma scalare prendono la seguente forma:
+	\begin{align*}
+	M_x &= -\,I_{xz}\,\dot{\omega_z}\,+\,I_{yz}\,\omega_z^2\\
+	M_y &= -\,I_{yz}\,\dot{\omega_z}\,-\,I_{xz}\,\omega_z^2\\
+	M_z &= I_{zz}\,\dot{\omega_z}
+\end{align*}	
+
+\begin{minipage}{.65\textwidth}
+
+Da un'osservazione qualitativa del sistema di equazioni sopra riportate si può notare una dipendenza deille reazioni vincolari dall'accelerazione agolare del sistema ($\dot{\omega_z}$) e dal quadrato della velocità angolare ($\omega_z^2$).
+
+Se i prodotti d'inerzia $I_{yz}$ e $I_{xz}$ sono nulli (ovvero se gli assi sono principali d'inerzia) le relazioni vincolari dipendono esclusivamente dall'accelerazione angolare del sistema proposto.
+
+Le coppie di forze che vengono ad originarsi sono riconducibili al momento My, e sono sovute al fatto che sto costringendo il corpo a ruotare lungo un asse che non è asse principale d'inerzia.
+
+Analogamente allo sbilanciamento statico, il bilanciamento dinamico si applica introducendo due pesetti in modo da ristabilire la simmetria assiale.
+\end{minipage}
+\hfill
+\begin{minipage}{.35\textwidth}
+\centering
+\includegraphics[width = .7\textwidth]{chapter06/Immagine118}
+\end{minipage}
+
+\section{Applicazione: Moto rotatorio con effetti giroscopici}
+
+	Gli effetti giroscopici nella vita di tutti i giorni si verificano generalmente quando un corpo a simmetria assiale e in rotazione rispetto all'asse di simmetria è posto in rotazione attorno ad un asse ortogonale come schematizzato nel disegno proposto
+	
+	Consideriamo dunque il moto rotatorio di un corpo a simmetria assiale intorno all'asse di simmetria a sua volta rotante intorno ad un asse ortogonale; il sistema è a 2 G.d.L.
+	
+	Un tipico caso è rappresentato da una ruota di un veicolo in curva.
+	
+	Supponiamo per semplicità che gli assi di rotazione siano ortogonali. Fissiamo due sistemi di riferimento, il sistema fisso ha origine nel punto di intersezione degli assi di rotazione O mentre quello solidale ha origine nel baricentro della ruota.
+	
+	Dato che il corpo è a simmetria assiale l'asse di rotazione è baricentrico e principale d'inerzia, inoltre i due momenti d'inerzia relativi agli assi $x_m$ e $y_m$ sono uguali.
+	
+	Affrontiamo il problema cinetostatico, supponiamo che il moto sia noto e sia formato da una rotazione velocità costante $\und{\omega_z}$ della ruota attorno al proprio asse e da una rotazione dell'asse della ruota con velocità costante $\und{\omega}$.
+	
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width = .6\textwidth]{chapter06/Immagine119}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.5\textwidth}
+		È possibile scrivere l'equazione di Eulero per i S.d.R. m e m' che ruotano, rispettivamente, alla velocità della ruota e del supporto.
+		
+		\begin{itemize}
+		\item Se scritto rispetto ad un S.d.R. solidale alla ruota
+		\begin{gather*}
+			\pexp{m}{\mathbf{K_G}} = \pexp{m}{\mathbf{\mathbf{I}}}\cdot \pexp{m}{\und{\omega_z}}\qquad\Rightarrow\qquad\td{\pexp{m}{\mathbf{K_G}}}{t} = \pexp{m}{\mathbf{M_O^{(e)}}}\\
+			\td{\pexp{m}{\mathbf{K_G}}}{t} = \pexp{m}{\dot{\mathbf{K_G}}}\,+\,\pexp{m}{\und{\omega_z}}\,\wedge\,\mathbf{K_G}
+			\end{gather*}
+			
+			Sono presenti un termine di derivata prima del momento della quantità di moto ($\dot{\mathbf{K_G}}$) e un prodotto esterno rappresentativo della velocità di trascinamento della terna (non del corpo)
+		\end{itemize}
+	\end{minipage}
+	\begin{itemize}
+		\item La medesima relazione se scritta rispetto alla terna m' solidale al supporto:
+		\[
+			\td{\pexp{m'}{\mathbf{K_G}}}{t} = \pexp{m'}{\mathbf{M_G}^{(e)}} = \pexp{m'}{\dot{\mathbf{K_G}}}\,+\,\und{\Omega}\,\wedge\,\pexp{m'}{\mathbf{K_G}}
+		\]
+		Anche in questa circostanza riconosciamo un termine legato alla derivata prima del momento della quantità di moto e un termine, individuato dal prodotto interno, relativo alla velocità di trascinamento della terna solidale al supporto/mozzo.
+		
+		Nel caso in cui il tensore d'inerzia abbia componenti costanti possiamo sviluppare ulteriormente la derivata del momento della quantità di moto sia nel caso del S.d.R. del supporto che della ruota:
+		\begin{gather*}
+			\pexp{m}{\dot{\mathbf{K_G}}} = \pexp{m}{\mathbf{\mathbf{I}}}\,\dot{\und{\omega}}\qquad \Longrightarrow\qquad \td{\pexp{m}{\mathbf{K_G}}}{t} = \pexp{m}{\mathbf{\mathbf{I}}}\,\dot{\und{\omega}}\,+\,\und{\omega_z}\,\wedge\,\pexp{m}{\mathbf{\mathbf{I}}}\,\und{\omega} = \prescript{m}{}{\mathbf{M}}{^{(e)}_G}\\
+			\pexp{m'}{\dot{\mathbf{K_G}}} = \pexp{m'}{\mathbf{\mathbf{I}}}\,\dot{\und{\omega}}\qquad \Longrightarrow\qquad \td{\pexp{m'}{\mathbf{K_G}}}{t} = \pexp{m'}{\mathbf{\mathbf{I}}}\,\dot{\und{\omega}}\,+\,\und{\Omega}\,\wedge\,\pexp{m'}{\mathbf{\mathbf{I}}}\,\und{\omega} = \prescript{m'}{}{\mathbf{M}}{^{(e)}_G}
+		\end{gather*}
+	\end{itemize}
+	
+	che in forma scalare possono essere, rispettivamente, rappresentate come:
+	\begin{gather*}
+			 \M{I} \B{\dot{\omega}}\,+\,P_{\omega_z}\,\M{I}\,\B{\omega}\,=\,\B{M}\\
+			 \M{I} \B{\dot{\omega}}\,+\,P_{\Omega}\, \M{I}\,\B{\omega}\,=\,\B{M}
+	\end{gather*}
+	
+	Le prime applicazioni degli effetti giroscopi si sono potute osservare nella progettazione dei satelliti per le missioni spaziali dello scorso secolo.
+	
+	In generale è consigliabile utilizzare un S.d.R. baricentrico e orientato lungo gli assi principali d'inerzia in moto tale che la seconda equazione cardinale della dinamca sia:	
+	
+	\[
+	\B{M_x\\M_y\\M_z} = \M{I_x&&\\&I_y&\\&&I_z}\,\B{\dot{\omega_x}\\\dot{\omega_y}\\\dot{\omega_z}}\,+\,
+    \M{0 & -\,\omega_z & \omega_y\\
+      & 0 & -\,\omega_x \\
+      \text{ANTISIMM.}& & 0}\,
+      \M{I_x&&\\&I_y&\\&&I_z}\,\B{\omega_x\\\omega_y\\\omega_z}    
+	\]
+	In forma scalare:
+	\begin{align*}
+	M_x &= I_x\,\dot{\omega_x}\,-\,I_y\,\omega_y\,\omega_z\,+\,I_z\,\omega_y\,\omega_z &= I_x\,\dot{\omega_x}\,+\,(I_z\,-\,I_y)\,\omega_y\,\omega_z\\
+	M_y &= I_y\,\dot{\omega_y}\,+\,I_x\,\omega_x\,\omega_z\,-\,I_z\,\omega_x\,\omega_z &= I_y\,\dot{\omega_y}\,+\,(I_x\,-\,I_z)\,\omega_x\,\omega_z\\
+	M_z &= I_z\,\dot{\omega_z}\,-\,I_x\,\omega_y\,\omega_x\,+\,I_y\,\omega_x\,\omega_y &= I_z\,\dot{\omega_z}\,+\,(I_y\,-\,I_x)\,\omega_y\,\omega_x
+	\end{align*}
+	Qualora $I_z\ne I_x = I_y$ l'equazione si semplifica e si ottiene la dinamica del giroscopio.
+	\vspace{1mm}
+	
+	\begin{minipage}{.5\textwidth}
+	\centering
+	\includegraphics[width=.7\textwidth]{chapter06/Immagine120}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.5\textwidth}
+		Vediamo dunque in azione ciò che abbiamo appena affrontato:
+		\begin{itemize}
+			\item Sia $\und{\Omega}$ la velocità angolare del S.d.R. m' (es. supporto/mozzo/albero);
+			\item Sia $\und{\omega_z}$ la velocità angolare del S.d.R. m (es. ruota)
+			\item la velocità angolare complessiva sarà data dalla somma vettoriale delle due componenti sopra elencate: 
+			\[
+			\und{\omega} = \und{\omega_z} + \und{\Omega} = \B{0\\\Omega\\\omega_z}
+			\]
+		\end{itemize}
+	\end{minipage}
+	
+	Possiamo dunque valutare le componenti del momento in un S.d.R. solidale al mozzo (m') dovute alla rotazione della ruota.
+	\begin{align*}
+		\leftidx{^{m'}}{\B{M_x\\M_y\\M_z}} &= \M{I_x&&\\&I_y&\\&&I_z}\,\leftidx{^{m'}}{\B{\dot{\omega_x}\\\dot{\omega_y}\\\dot{\omega_z}}}\,+\,\M{0 & -\,\omega_z & \omega_y\\\omega_z & 0 & -\,\omega_x \\-\,\omega_y& \omega_x& 0}\,\M{I_x&&\\&I_y&\\&&I_z}\,\leftidx{^{m'}}{\B{\omega_x\\\omega_y\\\omega_z}}\\
+      &= \M{I_x&&\\&I_y&\\&&I_z}\,\B{0\\0\\0}\,+\, \M{0 & 0 & \Omega\\ 0 & 0 & 0\\\Omega& 0& 0}\, \M{I_x&&\\&I_y&\\&&I_z}\,\B{0\\\Omega\\\omega_z}\\
+     &= \B{0\\0\\0}\,+\, \M{0 & 0 & \Omega\\ 0 & 0 & 0\\ \Omega& 0& 0}\,\B{0\\I_y\,\Omega\\I_z\,\omega_z} = \B{I_z\,\omega_z\,\Omega\\0\\0}
+	\end{align*}
+	Possiamo notare che il momento che esercita il telaio sul mozzo per compensare l'effetto giroscopico della ruota agisce solamente lungo l'asse x del S.d.R. m' ed è pari a $\pexp{m'}{M_x} = I_z\,\omega_z\,\Omega$
+	
+	Lo stesso problema poteva essere affrontato considerando la velocità angolare $\und{\omega}$ complessiva rispetto al S.d.R. solidale alla ruota: tuttavia i passaggi algebrici risultano più complessi:
+	
+	\begin{minipage}{.5\textwidth}
+	\centering
+	\includegraphics[width=.7\textwidth]{chapter06/Immagine121}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.5\textwidth}
+		\begin{itemize}
+			\item Sia $\und{\omega}$ la velocità angolare del S.d.R. m' (es. supporto/mozzo/albero);
+			\item Sia $\und{\omega_z}$ la velocità angolare del S.d.R. m (es. ruota)
+			\item Poiché nel S.d.R. scelto $\und{\omega}$ sarà allineata con uno degli assi (* come avveniva per l'esempio precedente), dovranno essere considerate le sue proiezioni; la velocità angolare complessiva sarà data dalla somma vettoriale delle due componenti sopra elencate: 
+			\[
+			\und{\omega} = \und{\omega_z} + \und{\Omega} = \B{\Omega\,\cos{(\cfrac{\pi}{2}-\theta)}\\\Omega\,\sin{(\cfrac{\pi}{2}-\theta)}\\\omega_z} = \B{\Omega\,\sin{\theta}\\\Omega\,\cos{\theta}\\\omega_z}
+			\]
+		\end{itemize}
+	\end{minipage}
+	\vspace{1mm}
+	
+	Possiamo dunque valutare le componenti del momento in un S.d.R, solidale alla ruota (m) dovute alla rotazione della ruota.
+	
+	\begin{align*}
+		\leftidx{^{m}}{\B{M_x\\M_y\\M_z}} &= \M{I_x&&\\&I_y&\\&&I_z}\,\leftidx{^{m}}{\B{\dot{\omega_x}\\\dot{\omega_y}\\\dot{\omega_z}}}\,+\,\M{0 & -\,\omega_z & \omega_y\\\omega_z & 0 & -\,\omega_x \\-\,\omega_y& \omega_x& 0}\,\M{I_x&&\\&I_y&\\&&I_z}\,\leftidx{^{m}}{\B{\omega_x\\\omega_y\\\omega_z}}\\
+      &= \M{I_x&&\\&I_y&\\&&I_z}\,\B{\Omega\,\omega_z\,\cos{\theta}\\-\,\Omega\,\omega_z\,\sin{\theta}\\0}\,+\, \M{0 & -\,\omega_z & \Omega\,\cos{\theta}\\ \omega_z & 0 & -\,\Omega\,\sin{\theta}\\-\,\Omega\,\cos{\theta}& \Omega\,\sin{\theta}& 0}\, \M{I_x&&\\&I_y&\\&&I_z}\,\B{\Omega\,\sin{\theta}\\\Omega\,\cos{\theta}\\\omega_z}\\
+      &= \B{I_x\,\Omega\,\omega_z\,\cos{\theta}\\-\,I_y\,\Omega\,\omega_z\,\sin{\theta}\\0}\,+\,\M{0 & -\,\omega_z & \Omega\,\cos{\theta}\\ \omega_z & 0 & -\,\Omega\,\sin{\theta}\\-\,\Omega\,\cos{\theta}& \Omega\,\sin{\theta}& 0}\,\B{I_x\,\Omega\,\sin{\theta}\\I_y\,\Omega\,\cos{\theta}\\I_z\,\omega_z}\\
+      &=  \B{I_x\,\Omega\,\omega_z\,\cos{\theta}\\-\,I_y\,\Omega\,\omega_z\,\sin{\theta}\\0}\,+\,\B{-\,I_y\,\omega_z\,\Omega\,\cos{\theta}\,+\,I_z\,\omega_z\,\Omega\,\cos{\theta}\\I_x\,\omega_z\,\Omega\,\sin{\theta}\,-\,I_z\,\omega_z\,\Omega\,\sin{\theta}\\-\,I_x\,\Omega^2\,\sin{\theta}\,\cos{\theta}\,+\,I_y\,\Omega^2\,\sin{\theta}\,\cos{\theta}}
+      	\end{align*}
+	Nell'ipotesi che $I_x = I_y$ l'espressione appena scritta si semplifica e si ottiene la dinamica del giroscopio.
+      \[\leftidx{^{m}}{\B{M_x\\M_y\\M_z}}= \B{I_z\,\omega_z\,\Omega\,\cos{\theta}\\-\,I_z\,\omega_z\,\Omega\,\sin{\theta}\\0}\]
+
+	
+	Le componenti del momento così ottenuto corrisponde alle proiezione nel S.d.R. in esame di un vettore di modulo $I_z\,\omega_z\,\Omega$ che corrisponde al risultato ottenuto precedentemente eseguendo il calcolo nel S.d.R. m' solidale al mozzo.
+	
+	\section{Principio dei Lavori Virtuali (PLV)}
+	
+	Il principio dei lavori virtuali (PLV) è il più antico tra i principi energetici della Meccanica; nella risoluzione dei problemi di equilibrio delle macchine è spesso più efficace delle equazioni cardinali della statica.
+	
+	Vediamo perché il PLV è particolarmente utile nella soluzione dei problemi di statica delle macchine.
+	
+	In primo luogo i problemi di statica possono essere suddivisi in due tipi:
+	\begin{enumerate}
+		\item Abbiamo problemi a \textbf{geometria costante} quando, una volta applicato il carico, il sistema non subisce spostamenti macroscopici ma solo piccole deformazioni; pertanto la configurazione di equilibrio del sistema caricato è uguale a quella del sistema scarico e quindi le condizioni di equilibrio possono essere scritte con riferimento alla geometria indeformata (\emph{la maggior parte delle strutture civili, ponti, torri, dighe, danno luogo a problemi statici a geometria costante}).
+		
+		\item Abbiamo problemi a \textbf{geometria variabile} quando, in seguito all'applicazione del carico il sistema subisce degli spostamenti macroscopici e pertanto la configurazione di equilibrio del sistema caricato differisce in maniera apprezzabile da quella originaria del sistema scarico.
+		
+		Problemi a geometria variabile si trovano soprattutto nel settore delle macchine, si pensi ad esempio al meccanismo di spinta rotativo sotto l'azione di una forza ed equilibrato da una forza esercitata da una molla di rigidezza \emph{k}.
+		
+		Problemi a geometria variabile possono essere risolti anche con le equazioni di equilibrio però con maggiori difficoltà in quanto si introducono anche come incognite le reazioni vincolari.
+	\end{enumerate}
+	
+	L'enunciato del PLV è il seguente:
+	\begin{center}
+		\emph{Condizione necessaria e sufficiente per l'equilibrio di un sistema ideale di corpi rigidi è che sia nullo il lavoro delle forze esterne su di esso agenti, comprese quelle di inerzia, a seguito di spostamenti virtuali}
+	\end{center}
+	
+	Tuttavia tale definizione/enunciato tiene in considerazione delle nozioni di meccanica razionale che non sono state affrontate.
+	
+	Si può dunque dare una definizione alternativa:
+	
+	\begin{center}
+	\emph{Condizione necessaria e sufficiente per l'equilibrio di un sistema materiale è che sia nullo il lavoro delle forze attive per ogni spostamento virtuale oppure minore o uguale a zero per ogni spostamento virtuale irreversibile}
+	\end{center}
+	
+	Analizziamo le diverse sezioni della frase appena esposta per comprendere a pieno il significato:
+	\begin{itemize}
+	\item \textbf{Equilibrio} $\coloneqq$ un sistema meccanico (che possiamo sempre immaginare come un insieme di punti materiali vincolati in vario modo) è in equilibrio se, posto in quiete, permane in quiete. In termini di equazioni del moto:
+	\[m\,\mathbf{a} = \mathbf{R}\]
+	significa che la risultante $\mathbf{R}$ delle forze agenti su ogni punto materiale è zero, in modo che l'accelerazione di tutti i punti sia zero e, se la velocità iniziale è zero (il sistema è posto in quiete) allora la velocità rimane zero (resta in quiete). 
+	\item \textbf{Forze attive e Forze vincolari} $\coloneqq$ possiamo distinguere le forze in due categorie: quelle che sono causate da vincoli $\mathbf{F}^{(v)}$,(reazoni vincolari) e quelle che non sono causate dai vincoli $\mathbf{F}^{(a)}$ (forze attive).
+	
+	A tal proposito vengono proposti alcuni esempi per consolidare il concetto di forze vincolari e attive:
+	
+	\begin{itemize}
+	\item Coppia rotoidale
+	
+	\begin{minipage}{.4\textwidth}
+	\centering
+	\includegraphics[width=.875\textwidth]{chapter06/Immagine122}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.5\textwidth}
+	Affinché i punti A e B coincidano il vincolo deve esercitare due forze uguali e opposte.
+	
+	In questo esempio, poiché la coppia rotoidale deve impedire la traslazione relativa deve produrre due forze.
+	
+	Se effettivamente il vincolo esercita solo forze per la cancellazione dei G.d.L. prende il nome di \textbf{Vincolo ideale o liscio}.
+	
+	Nella figura proposta le due forze che A esercita su B e viceversa devono essere uguali e contrarie perciò 
+	\begin{gather*}
+		R_{A,B\,x} = -\,R_{B,A\,x}\qquad;\qquad R_{A,B\,y} = -\,R_{B,A\,y}
+	\end{gather*}
+	\end{minipage}
+	
+			\item Coppia prismatica
+			
+			\begin{minipage}{.4\textwidth}
+			\centering
+			\includegraphics[width=.875\textwidth]{chapter06/Immagine123}
+			\end{minipage}
+			\hfill
+			\begin{minipage}{.5\textwidth}
+			 Se il vincolo è ideale impedirà solo lo spostamento lungo y.			 
+			 Le coppie che non possono essere considerate liscie sono quelle che presentano una componente di attrito, ovvero una forza lungo la direzione del moto.
+			 
+			 Nel PLV si assume che i vincoli siano lisci ovvero non siano presente attrito.
+			 
+			  D'altra parte se un sistema meccanico è in equilibrio con vincoli lisci a maggior ragione sarà in equilibrio con vincoli dotati di attrito perché quest'ultimo si oppone sempre al movimento.
+			\end{minipage}
+		\end{itemize}
+		
+		\item \textbf{Spostamento virtuale} $\coloneqq$ Uno spostamento virtuale va pensato come una configurazione alternativa nello stesso istante del sistema meccanico compatibile con i vincoli. 
+
+La parola "spostamento" è un po' fuorviante, poichè fa pensare a un movimento che avviene nel tempo. Invece si tratta di una posizione diversa, ma sempre congruente con i vincoli, che il sistema potrebbe avere nello stesso istante. 
+
+Gli "spostamenti" dei punti sono i vettori che uniscono la configurazione di riferimento con la configurazione immaginaria (virtuale) e, in genere, gli spostamenti sono considerati infinitesimi.
+
+Il concetto di spostamento virtuale può essere affrontato considerando l'esempio dell'ascensore:
+
+\begin{minipage}{.4\textwidth}
+\centering
+\includegraphics[width=.875\textwidth]{chapter06/Immagine124}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+	Consideriamo un ascensore in moto verticale con velocità v al cui interno è presente una sfera P che ha coordinate rispetto ad un S.d.R. fisso pari a $\mathbf{OP} = (q,v\cdot t)$.\newline
+	
+	Il punto materiale così rappresentato è vincolato a stare nel piano, ma non a muoversi lungo la coordinata x, che, di fatto, rappresenta l'unico G.d.L. del sistema meccanico ed è quindi rappresentato dalla coordinata generalizzata ``x=q''.
+\end{minipage}
+
+\begin{minipage}{.4\textwidth}
+\centering
+\includegraphics[width=.875\textwidth]{chapter06/Immagine125}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+	A questo punto per sottolineare la differenza tra spostamento infinitesimo e spostamento virtuale immaginiamo di rappresentare l'ascensore ad un istante infinitesimo successivo $\mathbf{t' = t + dt}$.\newline
+	
+	Di conseguenza anche la coordinata libera x=q, può trovarsi in una nuova posizione $\mathbf{q' = q + dq}$.\newline
+	
+	Si è così ottenuto lo \textbf{spostamento infinitesimo (dP)} del punto materiale.
+\end{minipage}
+
+\begin{minipage}{.4\textwidth}
+\centering
+\includegraphics[width=.875\textwidth]{chapter06/Immagine126}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+	Lo \textbf{spostamento virtuale}, invece, è un concetto che è indipendente dal tempo: in altri termini è un presente alternativo, che rappresenta una delle posizioni possibili del punto materiale in esame.\newline
+	
+	Nello spostamento virtuale, di conseguenza, $\mathbf{dt = 0}$. Il punto materiale occupa una posizione immaginaria nello stesso istante, e lo spostamento che ne deriva rimane comunque compatibile con il vincolo imposto, che, nel nostro caso, è rappresentato dalla base dell'ascensore.
+\end{minipage}
+
+\item \textbf{Spostamento virtuale reversibile e irreversibile} $\coloneqq$ si può ulteriormente distinguere gli spostamenti virtuali tra reversibili e irreversibili.
+
+Il concetto di reversibilità è strettamente legato ai vincoli unilaterali e bilaterali:
+
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=.875\textwidth]{chapter06/Immagine127}
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=.875\textwidth]{chapter06/Immagine128}
+\end{minipage}
+
+Gli esempi sopra riportati rappresentano rispettivamente un vincolo unilaterale e bilaterale a cui è applicato uno spostamento reversibile.
+
+\begin{minipage}{.6\textwidth}
+Uno spostamento è reversibile se esiste anche uno spostamento opposto ancora compatibile con i vincoli\newline
+
+Di lato viene rappresentato uno spostamento che è compatibile con il vincolo imposto dalla coppia prismatica imposta, ma irreversibile in quanto lo spostamento opposto viola il vincolo stesso.
+\end{minipage}
+\hfill
+\begin{minipage}{.35\textwidth}
+\centering
+\includegraphics[width=.7\textwidth]{chapter06/Immagine129}
+\end{minipage}
+
+Per un \textbf{sistema olonomo}, cioè un sistema nel quale i vincoli possono essere espressi con equazioni algebriche  (si ricorda che alcuni vincoli come quello di rotolamento in tre dimensioni si esprimono con equazioni differenziali  che non possono essere integrate) la posizione dei punti può essere espressa in funzione delle coordinate generalizzate.
+
+Per esempio per un sistema a due gradi di libertà la posizione di un punto generico P potrà essere pensata come funzione delle due coordinate generalizzate.
+\[\mathbf{OP = f(q_1,\,q_2,\,t)}\]
+Nella espressione $\mathbf{f(q1,q2,t)}$ compare il tempo t in maniera esplicita perché, nel caso più generale alcuni vincoli potrebbero essere dipendenti dal tempo.
+Lo spostamento virtuale si calcola immaginando variazioni infinitesime virtuali delle coordinate generalizzate a tempo t costante:
+\[\mathbf{\delta	P = (\partial_{q1}\,f)\,\delta q1\,+\,(\partial_{q2}\,f)\,\delta q2}\]
+Per contro, va osservato che uno spostamento che avvenga in un tempo infinitesimo (spostamento infinitesimo) sarebbe:
+\[\mathbf{dP = (\partial_{q1}\,f)\,dq1\,+\,(\partial_{q2}\,f)\,dq2\,+\,(\partial_t\,f)\,dt}\]
+Le derivate parziali ($\partial_{qi}\,f$) sono i rapporti di velocità, che ci sonsentono quindi di esprimere gli spostamenti virtuali dei vari punti del sistema, in funzione delle variazioni virtuali $\delta qi$ delle coordinate generalizzate.
+	\end{itemize}
+	
+	\begin{center}
+	{\scshape{\bfseries Osservazioni}}
+	\end{center}
+	
+	Il lavoro virtuale $\delta L$ può essere scomposto nel lavoro delle forze attive e in quello delle forze vincolari.
+	\[\mathbf{\delta L = \delta L^a + \delta L^v}\]
+	In un sistema equilibrato la risultante $\mathbf{R} = \mathbf{F}^{(a)}\,+\,\mathbf{F}^{(v)}$ è zero su tutti i punti materiali. Quindi il lavoro virtuale totale è $\delta L = 0$. 
+	
+	D'altra parte nel caso di vincoli lisci (senza attrito) sappiamo che la reazione vincolare agisce nella direzione dei gradi di libertà soppressi. 
+	
+	\begin{enumerate}
+		\item Nel caso di vincoli bilaterali la reazione vincolare può avere un verso qualsiasi nella direzione del vincolo ma il movimento avviene nella direzione ortogonale (dei gradi di libertà superstiti) e non ha componenti nella direzione vincolata. Quindi il lavoro delle reazioni vincolari (nei vincoli lisci) è zero: $\delta L^v = 0$. Ne consegue che la condizione di equilibrio (vincoli lisci e bilaterali) è data da:
+		\[\mathbf{\delta L^a = 0}\]
+		Il vantaggio di questa formulazione sta nel fatto che non è necessario considerare le forze vincolari nei calcoli. D'altra parte trascurare l'attrito significa trascurare forze che si oppongono al movimento (e quindi un sistema in equilibrio con vincoli lisci  è a maggior ragione equlibrato con vincoli dotati di attrito).
+		
+		\item Nel caso di vincoli unilaterali la reazione vincolare ha verso opposto al vincolo. In un vincolo unilaterale sono possibili spostamenti virtuali (non reversibili) nella direzione di apertura del vincolo. Gli spostamenti virtuali non reversibili hanno quindi una componente nella direzione di apertura del vincolo (la stessa della reazione vincolare) e il lavoro virtuale in questo caso è $\delta L^v>0$. Ne consegue che la condizione di equilibrio (vincoli lisci e unilaterali) è data da:
+		\[\mathbf{\delta L^a \le 0}\]
+		
+		\item  Vale la pena osservare che il lavoro virtuale va calcolato per ogni spostamento virtuale (reversibile o no). Cioè si deve annullare qualsiasi sia lo spostamento virtuale immaginato e questa condizione permette di ricavare tante equazioni quanti sono i gradi di libertà dato che i moltiplicatori di $\delta qi$ devono essere tutti zero (come risulterà dagli esempi ed esercizi).
+	\end{enumerate}
+
+\subsection{Applicazione del PLV ad un sistema ad 1 G.d.L.: il glifo oscillante}
+
+	Consideriamo il sistema meccanico del glifo oscillante. Su tale sistema meccanico sono presenti : il telaio, una manovella motrice e un pistone (a comporre il glifo oscillante).
+	
+	Per l'applicazione dell'equilibrio supponiamo che i vincoli siano lisci (in questo modo anche se fosse presente attrito andrebbe a favore dell'equilibrio).
+	
+	Su questo sistema meccanico agiscono le reazioni vincolari alle cerniere e una reazione vincolare normale alla guida prismatica, etc.. tutte queste forze non è necessario considerarle in quanto nell'ipotesi di vincoli lisci le reazioni vincolari non fanno lavoro.
+	
+	\begin{minipage}{.4\textwidth}
+	\centering
+	\includegraphics[width=.875\textwidth]{chapter06/Immagine130}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.5\textwidth}	
+	Le uniche forze attive che agiscono sul sistema sono la forza F applicata all'estremo del glifo e il momento motore (M) applicata alla manovella.
+	
+	Il principio dei lavori virtuali dice che tale sistema meccanico è in equilibrio se il lavoro virtuale delle sole forze attive è uguale a zero per ogni spostamento virtuale reversibile (in questo caso sono tutti reversibili in quanto i vincoli sono bilaterali).
+	\end{minipage}
+	
+	Il lavoro virtuale delle due forze sarà dato dalla somma dei prodotti scalari tra le forze stesse e gli spostamenti virtuali:
+	
+	\begin{enumerate}[$\rightarrow$]
+	\item Lavoro della forza F applicata sul punto P.
+	
+	Per il S.d.R. scelto vale che:
+	\begin{gather*}
+	\mathbf{F} = \B{0\\-F}\qquad;\qquad OP = \B{L\,\cos{\theta}\\L\,\sin{\theta}}\quad\Rightarrow\quad\delta \mathbf{P} = \delta OP = \B{-\,L\,\sin{\theta}\\L\,\cos{\theta}}\,\delta \theta\\
+	\delta L^{(F)} = \mathbf{F}\,\cdot\,\mathbf{\delta P} = -\,F\,L\,\cos{\theta}\,\delta \theta.
+	\end{gather*}
+	\item Lavoro del momento M applicata alla manovella:
+	\[\delta L ^{(M)} = M\,\delta q\]
+	\end{enumerate}
+
+Ricordando la formulazione del PLV, otteniamo che:
+\begin{align*}
+\delta L &= \delta L^{(a)} = \delta L^{(F)}\,+\,\delta L^{(M)}\\
+&= M\,\delta q\,-\,F\,L\,\cos{\theta}\,\delta \theta = 0\qquad\forall \delta q
+\end{align*}
+
+Il problema è che \textbf{q} e $\mathbf{\delta \theta}$ non sono indipendenti in quanto il meccanismo presenta una catena cinematica.
+
+Compiendo l'analisi cinematica del meccanismo, risolvendo il relativo poligono di chiusura, possiamo ottenere un'espressione di $\delta \theta$ in funzione di $\delta q$ tramite il rapporto di velocità, ovvero $\delta \theta = \tau_{\theta\,q}\,\delta q$.
+
+\begin{align*}
+\delta L &= M\,\delta q\,-\,F\,L\,\cos{\theta}\,\tau_{\theta q}\,\delta q = 0\\
+&= (M\,-\,F\,L\,\cos{\theta}\,\tau_{\theta q})\,\delta q = 0
+\end{align*}
+
+Ricordando che tale espressione deve essere zero qualsiasi sia $\delta q$, giungo alla conclusione che il moltiplicatore deve essere nullo, e di conseguenza è possibile trovare il valore del momento che mantiene in equilibio il sistema in presenza della forza F
+\[M = F\,L\,\cos{\theta}\,\tau_{\theta q}\]
+Il vantaggio del PLV dunque è quello di dare in maniera immediata la relazione tra una forza attiva e l'altra senza scomodare le reazioni vincolari. Inoltre si osservi che il rapporto tra gli spostamenti virtuali è anche il rapporto di velocità.
+
+\subsection{Applicazione del PLV a sistemi a più G.d.L.}
+
+		Il principio PLV può essere convenientemente  usato anche per risolvere problemi di \und{sistemi a più G.d.L.}.
+		
+		\begin{minipage}{.5\textwidth}
+		Consideriamo ad esempio un pentalatero e supponiamo che sia assegnata la configurazione geometrica di equilibrio ossia siano noti i valori delle coordinate libere $q_1$ e $q_2$.
+		
+		Data la forza applicata al pentalatero nel punto di estremità C si vogliano determinare i momenti $M_1$ e $M_2$ che equilibrano il sistema.
+		
+		L'applicazione del PLV fornisce:
+		\[\delta L = M_1\,\delta q_1\,+\,M_2\,\delta q_2\,+\,F_x\,\delta x_c\,+\,F_y\,\delta y_c\,=\,0\]
+		\end{minipage}
+		\hfill
+		\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=.95\textwidth]{chapter06/Immagine131}
+		\end{minipage}
+		
+		ed espriemendo gli spostamenti virtuali in funzione di quelli delle coordinate libere:
+		\begin{align*}
+		\delta L &= M_1\,\delta q_1\,+\,M_2\,\delta q_2\,+\,F_x\,(\pd{x_c}{q_1}\,\delta q_1\,+\,\pd{x_c}{q_2}\,\delta q_2)\,+\,F_y\,(\pd{y_c}{q_1}\,\delta q_1\,+\,\pd{y_c}{q_2}\,\delta q_2)\\
+		&= M_1\,\delta q_1\,+\,M_2\,\delta q_2\,+\,F_x\,(\tau_{xC1}\,\delta q_1\,+\,\tau_{xC2}\,\delta q_2)\,+\,F_y\,(\tau_{yC1}\,\delta q_1\,+\,\tau_{yC2}\,\delta q_2)\\
+		&= \delta q_1\,(M_1\,+\,F_x\,\tau_{xC1}\,+\,F_y\,\tau_{yC1})\,+\,\delta q_2\,(M_2\,+\,F_x\,\tau_{xC2}\,+\,F_y\,\tau_{yC2}) = 0
+		\end{align*}
+		
+		Noto a questo punto che tale formulazione dei lavori virtuali deve valere per ogni spostamento virtuale ($\forall \delta q_1, \delta q_2$) possiamo ammettere che per essere vero i moltiplicatori degli spostamenti virtuali stessi devono essere nulli, ovvero:
+		\[
+		\begin{dcases}
+			M_1 = -\,F_x\,\tau_{xC1}\,-\,F_y\,\tau_{yC1}\\
+			M_2 = -\,F_x\,\tau_{xC2}\,-\,F_y\,\tau_{yC2}
+		\end{dcases}
+		\]
+
+	Il problema di tipo statico è quindi ricondotto ad un problema cinematico di determinazione dei rapporti di velocità del punto di applicazione della forza esterna.
+	
+	Concludendo vale la pena di osservare che il PLV è uno strumento molto potente che consente di calcolare la forza motrice, o le forze motrici, necessarie per equilibrare una macchina o la configurazione di equilibrio stessa.
+	
+	La sua semplicità e potenza nasce proprio dal fatto che nella sua formulazione non entrano le forze reattive interne e le forze reattive esterne (eccetto quelle derivanti da organi elastici).
+	
+	Esistono tuttavia alcuni problemi ingegneristici per i quali è necessario calcolare le forze reattive esterne che la macchina esercita sul telaio (\emph{uguali ed opposte a quelle che esercita il telaio sulla macchina}) e le forze reattive interne.
+	
+	Ad esempio per il calcolo della resistenza dei supporti e degli elementi cinematici che costituiscono le coppie cinematiche è indispensabile conoscere rispettivamente le forze reattive esterne ed interne.
+	
+	Per risolvere questi problemi è indispensabile fare ricorso alle equazioni cardianali di equilibrio.
+	
+	\subsection{Applicazione: sospensione di una motocicletta}
+	
+	 Nell'applicazione del PLV abbiamo fatto la fondamentale ipotesi che nelle interconnessioni (\emph{coppie cinematiche}) tra i corpi rigidi e tra i corpi rigidi e il telaio non vi fosse attrito, e quindi dissipazione di lavoro; inoltre abbiamo fatto l'ipotesi addizionale che nelle interconnessioni non vi fosse nessun assorbimento di energia elastica.
+	 
+	 Ora rimuoviamo la seconda ipotesi e consideriamo sistemi di corpi rigidi con interconnessioni prive di attrito ma in grado di assorbire energia elastica e di restituirla completamente.
+	 
+	 In altri termini significa ammettere che tra i vari membri e il telaio possano scambiarsi delle forze rispettivamente reattive interne e esterne di tipo conservativo in grado di compiere lavoro.
+	 
+	 Per semplicità supponiamo che queste forze conservative siano esclusivamente di tipo elastico.
+	 
+	 Si può dimostrare che se un sistema di corpi rigidi, connessi tra loro e al telaio \emph{tramite coppie cinematiche prive di attrito e tramite molle perfettamente elastiche}, è in equilibrio, la somma del lavoro virtuale delle forze esterne è uguale alla somma delle variazioni virtuali dell'energia potenziale delle molle:
+	 \[\delta L = \sum \delta E_P\]
+	 L'energia potenziale di una molla è data da:
+	 \[E_P = \dfrac{1}{2}k\,(\Delta s)^2\]
+	 dove k è la costante elastica e $\Delta s$ è la deformazione.
+	 
+	 Consideriamo a tal fine l'esempio della sospensione di una motocicletta.
+	 
+	 La coordinata generalizzata è la rotazione \emph{q} del forcellone. Non c'è attrito. All'estremità del forcellone è applicata una forza \emph{F} diretta verso l'alto. La molla è lineare con costante \emph{k} e le coppie rotoidali alle estremità le consentono di allungarsi senza piegarsi. Calcolare il valore di q per cui il sistema è in equilibrio. 
+	 
+	 Poiché il forcellone è un unico corpo rigido, connesso al telaio da un vincolo liscio e da una molla elastica lineare possiamo applicare il PLV nella forma:
+	 \[\sum \delta L_{\text{forze attive esterne}} = \sum \delta E_{\text{potenziale molle}}\]
+	Per quanto concerne il primo membro abbiamo una sola forza esterna (\emph{non elastica}) che è \emph{F} applicata nel punto avente coordinata verticale $y = l\,\sin{q}$.
+	
+	\begin{minipage}{.5\textwidth}
+	Il suo lavoro virtuale è:
+	\[\sum \delta L_{\text{forze attive esterne}} = F\,\delta y=F\,\pd{y}{q}\,\delta q\,= F\,l\,\cos{q}\,\delta q\]
+	Sia $s_0$ la lunghezza della molla indeformata. La sua lunghezza deformata è data da:
+	\[s = \sqrt{s_x^2\,+\,s_y^2}\]
+	dove $s_x=b\,\cos{q}$ e $s_y = h\,-\,b\,\sin{q}$.
+	
+	Perciò:
+	\[s = \sqrt{b^2\,-2\,bh\,\sin{q}\,+\,h^2}\]
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.5\textwidth}
+	\centering
+	\includegraphics[width=.95\textwidth]{chapter06/Immagine132}
+	\end{minipage}
+
+Ricordando la formula dell'energia potenziale di una molla si ottiene:
+\begin{gather*}
+E_P = \cfrac{1}{2}\,k\,(\Delta l)^2 = \cfrac{1}{2}\,k\,(s\,-\,s_0)^2\\
+\delta E_P = k\,(s\,-\,s_0)\,\delta s\\
+\text{È possibile esprimere $\delta s$ in funzione di $q$}\\
+\delta s = \td{s}{q}\,\delta q = \cfrac{-\,h\,b\,\cos{q}}{\sqrt{b^2\,-2hb\,\sin{q}\,+\,h^2}}\,\delta q
+\end{gather*}
+
+Introducendo questo risultato che esprime il PLV si ottiene:
+\[F\,l\,\cos{q}\,\delta q = -\,k\,h\,b\,\cos{q}\,(1\,-\,\cfrac{s_0}{\sqrt{b^2\,-\,2hb\,\sin{q}\,+\,h^2}})\,\delta q\]
+Da cui:
+\[F\,l\,\cos{q}\,+\,k\,h\,b\,\cos{q}\,(1\,-\,\cfrac{s_0}{\sqrt{b^2\,-\,2hb\,\sin{q}\,+\,h^2}}) = 0\]
+Tale relazione ci consente di calcolare il valore di $q$, nella configurazione di equilibrio poiché $F$ è nota e \emph{$s_0$, k, h, b} sono costanti note.
+
+Da osservare che sarebbe stato difficile risolvere il problema con le equazioni di equilibrio proprio perché la \und{configurazione di equilibrio era l'incognita del problema}.
+
+\subsection{Principio di d'Alembert}
+
+Premesso che la quantità $-\,m_k\,\mathbf{a_k}$ prende il nome di \textbf{forza d'inerzia}, allora:\newline
+
+\textbf{Principio di d'Alembert}: \emph{si passa dalle equazioni della statica a quelle della dinamica aggiungendo alle forze attive le forze d'inerzia}\newline
+
+Così si passa dalle equazioni cardinali della statica a quelle della dinamica:
+\begin{gather*}
+\begin{dcases}
+\sum_{k=1}^{N}\,(\mathbf{F_k}\,+\,\mathbf{\Phi_k}) = 0\\
+\sum_{k=1}^{N}\,\mathbf{r_k}\,\wedge\,(\mathbf{F_k}\,+\,\mathbf{\Phi_k}) = 0\\
+\end{dcases}
+\quad\rightarrow\quad
+\begin{dcases}
+\sum_{k=1}^{N}\,(\mathbf{F_k}\,+\,\mathbf{\Phi_k}\,-\,m_k\,\mathbf{a_k}) = 0\\
+\sum_{k=1}^{N}\,\mathbf{r_k}\,\wedge\,(\mathbf{F_k}\,+\,\mathbf{\Phi_k}\,-\,m_k\,\mathbf{a_k}) = 0\\
+\end{dcases}
+\end{gather*}
+
+dove:\begin{itemize}
+\item $\mathbf{F_k}$ sono le forze attive agenti sul sistema di punti materiali;
+\item $\mathbf{\Phi_k}$ sono le forze reattive agenti sul sistema di punti materiali;
+\item $m_k\,\mathbf{a_k}$ sono le forze d'inerzia;
+\end{itemize}
+
+e dal principio dei lavori virtuali alla relazione simbolica della dinamica:
+\begin{gather*}
+\sum_{k=1}^N\,\mathbf{F_k}\,\cdot\,\delta \mathbf{r_k}\,\le\,0\qquad\rightarrow\qquad \sum_{k=1}^N\,(\mathbf{F_k}\,-\,m_k\,\mathbf{a_k})\,\cdot\,\delta \mathbf{r_k}\,\le\,0
+\end{gather*}
+Il principio di d'Alembert permette di ridurre l'impostazione di un problema di dinamica alla impostazione di un corrispondente problema di statica tenendo conto appunto delle forze d'inerzia.
+
+Il procedimento risulta particolarmente utile quando il moto del sistema è assegnato (e quindi le forze d'inerzia sono note), mentre risultano incognite le forze attive che mantengono il movimento. In questo senso il principio di d'Alembert è particolarmente usato nella meccanica applicata.\newline
+
+\textbf{!! In Appendice A è presente un confronto tra la Formulazione PLV e le equazioni di Newton-Eulero per la determinazione delle forze agenti su un medesimo meccanismo}
+\newpage
+\section{Vincoli olonomi e vincoli anolonomi}
+\begin{itemize}
+\item Coppia cinematica rotoidale
+
+\begin{minipage}{.4\textwidth}
+\centering
+\includegraphics[width=.875\textwidth]{chapter06/Immagine133}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+L'esistenza di un vincolo può essere formalizzata tramite l'equazione di congruenza:
+\[
+\begin{dcases}
+x_A = x_A'\\
+y_A = y_A'
+\end{dcases}
+\]
+Questo vincolo impone che i punti A e A' siano coincidenti: questa condizione di vincolo consiste dunque di due equazioni scalari espresse tramite equazioni algebriche.
+\end{minipage}
+
+\item Ruota che rotola senza strisciare sul piano
+
+\begin{minipage}{.4\textwidth}
+\centering
+\includegraphics[width=.875\textwidth]{chapter06/Immagine134}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+Una ruota che rotola senza strisciare ammette che il punto P abbia velocità nulla, ovvero $\mathbf{v_P} = 0$.
+
+Scrivendo, dunque, l'espressione vettoriale che descrive la velocità del punto P nell'ipotesi che la ruota possa essere trattata come corpo rigido, otteniamo che:
+\[\mathbf{v_P} = \mathbf{v_G}\,+\,\und{\omega}\,\wedge\,\mathbf{GP}\]
+La velocità del punto P ha due componenti nel piano. 
+\end{minipage}
+
+Poiché la velocità del punto P lungo y è già nulla per la coppia prismatica che si viene a creare con il suolo, rimaniamo con la componente orizzontale della velocità:
+\[\dot{x_P} = \dot{x_G}\,+\,\dot{\theta}\,r\]
+ovvero la velocità del punto P è dipendente dalla velocità del baricentro della ruota e $r\,\dot{\theta}$.
+
+La condizione di rotolamento puro impone che $\dot{x_P} = 0$, che permette di esprimenre il vincolo di rotolamento sulla velocità (non sugli spostamenti) tramite un'equazione differenziale:
+\[\dot{x_G}\,+\,\dot{\theta}\,r = 0\]
+Tuttavia, l'espressione differenziale in questione ammette una forma primitiva:
+\begin{align*}
+\int{\dot{x_G}\,dt}\,&=-\,\int{\dot{\theta}\,r\,dt}\\
+x_G &= -\,\theta\,r\,+\,cost.
+\end{align*}
+Ho così trasformato un'equazione differenziale in una equazione algebrica del tutto analoga al vincolo di coppia rotoidale visto precedentemente.
+
+In altri termini posso descrivere la posizione della ruota in funzione del solo G.d.L. (esso sia la posizione del baricentro $\mathbf{x_G}$ o l'angolo di rotazione della ruota $\mathbf{\theta}$).
+\end{itemize}
+
+Un vincolo differenziale che ammetta una forma integrale mi permette di ridurre i G.d.L. e di utilizzare un numero di variabili pari al numero di G.d.L. del sistema in esame.
+
+Se ciò avviene il vincolo si dice \textbf{olonomo}.
+
+In ultima analisi in un vincolo olonomo la posizione di un punto generico del sistema è esprimibile come una funzione di un certo numero di G.d.L. ed eventalmente del tempo:
+\begin{empheq}[box=%
+	\fbox]{gather*}
+		\mathbf{OP} = f(q_1,\dots,\,q_N,\,t)
+	\end{empheq}
+	
+	Per contro un \textbf{vincolo non olonomo} (o anolonomo) è un vincolo che non ammette una forma integrale algebrica per le equazioni differenziali.
+	
+	Un tipico esempio è la ruota nello spazio tridimensionale con vincolo di rotolamento:
+	\vspace{1mm}
+	
+	\begin{minipage}{.5\textwidth}
+	\centering
+\includegraphics[width=.95\textwidth]{chapter06/Immagine135}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{.5\textwidth}
+	Dopo il percorso chiuso il raggio della ruota ha ruotato di un angolo pari a $\theta = 4\,\theta_0$.\newline
+	
+	Ciò a dimostrazione che posso ritornare alla posizione iniziale, ma con un angolo $\theta$ diverso dall'angolo alla condizione iniziale. questo implica che non esiste un integrale primo per la condizione di vincolo in esame.\newline
+	
+	Sono riuscito dunque a cambiare la posizione della ruota senza strisciare, ma controllando la traslazione lungo gli assi \textbf{x} e \textbf{y} tramite le sole variabili $\mathbf{\theta}$ (rotazione attorno all'asse della ruota) e $\mathbf{\Phi}$ (rotazione attorno a \textbf{z}).
+	\end{minipage}
+	\vspace{1mm}
+	
+	I vincoli non olonomi sono di grande utilità in quanto permettono di controllare la posizione di un oggetto con (come nel nostro esempio) 4 G.d.L. controllando solamente solo 2 variabili.
+
+\section{Equazioni di Lagrange}
+
+Le equazioni di Lagrange sono sostanzialmente derivate dal PLV e dall'approccio di d'Alembert. In altri termini le equazioni di Lagrange vengono derivate sotto le stesse condizioni per le quali si può applicare il PLV.
+
+Le ipotesi per cui valgono le equazioni di Lagrange sono:
+\begin{itemize}
+\item Vincoli lisci
+\item Vincoli bilaterali $\qquad\Rightarrow\qquad \delta L = 0\qquad(\cancel{\delta L < 0})$
+\item Vincoli olonomi $\qquad\Rightarrow\qquad OP_i\,=\,f(q_1,\,\dots\,,q_N,\,t)$
+\end{itemize}
+
+Per semplicità ma anche per generalizzare il risultato che otterremo dalla trattazione possiamo immaginare che un sistema meccanico in ultima analisi sia un sistema di punti materiali.
+
+Di conseguenza, dato un sistema di punti materiali, le condizioni di equilibrio, secondo il principio di d'Alembert, assumono la seguente formulazione:
+\[\mathbf{F}_i\,+\,\mathbf{\Phi}_i\,-\,m_i\,\mathbf{a}_i = 0\]
+
+Noto ora che dall'ipotesi di vincolo liscio il lavoro virtuale delle forze vincolari ($\mathbf{\Phi}_i$) è ingnorabile in quanto perpendicolare allo spostamento, è possibile applicare il PLV:
+\[\sum_{i=1}^N\,(\mathbf{F}_i\,-\,m_i\,\mathbf{a}_i)\,\cdot\,\delta \mathbf{P}_i=0\]
+
+Dall'ipotesi di vincoli olonomo è possibile esprimere la posizione del punto i-esimo come una funzione del tempo (t) e delle coordinate generalizzate ($q_i$), infatti vale che:
+\[OP_i = OP_i(q_1,\,\dots,\,q_N, t)\]
+questo mi permette di calcolare le derivate in funzione delle coordinate generalizzate. Quando verrà calcolato il differenziale, tuttavia, non sarà presente la derivata parziale rispetto al tempo in quanto lo spostamento virtuale è calcolato a tempo stazionario:
+\[\delta P_i = \sum_K\,(\pd{\mathbf{OP_i}}{q_k}\,\delta q_k) = \sum_{k=1}^N\,\mathbf{\tau}_{i,k}\,\delta q_k\]
+sostituendo l'epressione con i rapporti di velocità ($\mathbf{\tau}_{i,k}$) all'espressione del PLV, ottengo una nuova formulazione la quale suggerisce che qualsiasi sia lo spostamento virtuale delle coordinate generalizzate ($\delta q_k$) deve essere nullo il lavoro virtuale. 
+\[\sum_{i=1}^N\,(\mathbf{F}_i\,-\,m\,\mathbf{a}_i)\,\cdot\,\sum_{k=1}^N\,\mathbf{\tau}_{i,k}\,\delta q_k = 0\]
+
+Riarrangiando l'espressione, raccogliendo gli spostamenti $\delta q_k$ si ottengono N equazioni in quanto i moltiplicatori degli spostamenti devono essere nulli perché valga il PLV.
+\[\sum_{k=1}^N\,(\sum_{i=1}^N (\mathbf{F}_i\,-\,m\,\mathbf{a}_i)\,\cdot\,\mathbf{\tau}_{i,k})\,\delta q_k = 0\]
+
+ho così ottenuto una equazione per ogni G.d.L. del sistema, che possono essere rappresentate dall'espressione sintetica:
+\[\sum_{i=1}^N\,\mathbf{F}_i\,\cdot\,\mathbf{\tau}_{i,k}\,-\,\sum_{i=1}^N\,m_i\,\mathbf{a}_i\,\cdot\,\mathbf{\tau}_{i,k} = 0\qquad\qquad\qquad  k = 1,\dots,N\]
+Definisco:
+\begin{align*}
+Q_k &= \sum_{i=1}^N\,\mathbf{F}_i\,\cdot\,\mathbf{\tau}_{i,k}\quad&&\rightarrow\,\text{Forza generalizzata della coordinata k-esima}\\
+\hat{\tau}_k &= \sum_{i=1}^N m_i\,\mathbf{a}_i\,\cdot\,\mathbf{\tau}_{i,k}\quad&&\rightarrow\,\text{inerzia generalizzata}
+\end{align*}
+\[Q_k\,-\,\hat{\tau}_k = 0\qquad\qquad k = 1,\dots,N\]
+Da un punto di vista algebrico le due nuove componenti ottenute possono essere interpretate come:
+\begin{itemize}
+\item $Q_k$: la proiezione delle forze attive agenti sul sistema sul k-esimo G.d.L. ($q_k$);
+\item $\hat{\tau}_k$: la proiezione delle forze d'inerzia sul k-esimo G.d.L. ($q_k$);
+\end{itemize}
+
+Il vantaggio delle equazioni di Lagrange è che posso calcolare l'inerzia generalizzata dall'energia cinetica del sistema. Procediamo alla dimostrazione:
+
+La formulazione generale dell'energia cinetica è:
+\[T = \cfrac{1}{2}\,\sum_{i=1}^N\,m_i\,\mathbf{v}_i^2\]
+dove la velocità può essere ottenuta derivando rispetto al tempo l'espressione della posizione dell'i-esimo punto materiale secondo la formulazione del vincolo olonomo:
+\[\mathbf{v}_i = \sum_{k=i}^N\,\mathbf{\tau}_{i,k}\,\dot{q}_k\,+\,\pd{P_i}{t}\]
+Ovviamente se il vincolo non fosse dipendente dal tempo il termine di derivata parziale rispetto al tempo non sarebbe presente.
+
+L'espressione così ottenuta della velocità è in funzione dei rapporti di velocità e della velocità dei moventi.
+
+Voglio dimostrare che:
+\[\hat{\tau}_k = \td{}{t}\,\pd{T}{\dot{q_k}}\,-\,\pd{T}{q_k}\]
+\begin{enumerate}
+\item \[\pd{T}{\dot{q_k}} = \sum_{i=1}^N\,m_i\,\mathbf{v}_i\,\cdot\,\mathbf{\tau}_{i,k}\]
+\item \[\td{}{t}\,\pd{T}{\dot{q_k}} = \sum_{i=1}^N\,m_i\,\mathbf{a}_i\,\cdot\,\mathbf{\tau}_{i,k}\,+\,\sum_{i=1}^N\,m_i\,\mathbf{v}_i\,\cdot\,\td{}{t}(\mathbf{\tau}_{i,k})\]
+\item \[\pd{T}{q_k} = \sum_{i=1}^N\,m_i\,\mathbf{v}_i\,\cdot\,\pd{}{q_k}(\mathbf{v}_i)\]
+\end{enumerate}
+
+Possiamo notare a questo punto che l'ultimo termine della formula (2) e la formula 3 uguali, infatti:
+\begin{align*}
+\sum_{i=1}^N\,m_i\,\mathbf{v}_i\,\cdot\,\pd{}{q_k}(\mathbf{v}_i)\quad &=\quad \sum_{i=1}^N\,m_i\,\mathbf{v}_i\,\cdot\,\td{}{t}(\mathbf{\tau}_{i,k})\\
+\sum_{i=1}^N\,m_i\,\mathbf{v}_i\,\cdot\,\pd{}{q_k}(\td{}{t}(\mathbf{OP_i}))\quad &=\quad \sum_{i=1}^N\,m_i\,\mathbf{v}_i\,\cdot\,\td{}{t}(\pd{}{q_k}(\mathbf{OP_i}))
+\end{align*}
+
+Dalla somma delle due espressioni si ottiene dunque:
+\[\td{}{t}(\pd{T}{\dot{q_k}})\,-\,\pd{T}{q_k} = \sum_{i=1}^N m_i\,\mathbf{a}_i\,\cdot\,\mathbf{\tau}_{i,k} = \hat{\tau}_k\]
+
+A questo punto è possibile enunciare le equazioni di Lagrange nella prima forma:
+\begin{empheq}[box=%
+	\fbox]{gather*}
+		\td{}{t}\pd{T}{\dot{q_k}}\,-\,\pd{T}{q_k}\,=\,Q_k\qquad\qquad k = 1,\dots,N
+	\end{empheq}
+
+In alternativa alla formula appena esposta esiste \textbf{seconda forma delle equazioni di Lagrange}.
+
+È possibile infatti dividere le forze generalizzate in forze conservative e non conservative: questa suddivisione ci permette, noto che le forze conservative ammettono la presenza di un potenziale, di trovare una via alternativa e generalmente più semplice per valutare l'espressione delle forze generalizzate
+\begin{align*}
+\td{}{t}(\pd{T}{\dot{q_k}})\,-\,\pd{T}{q_k}&= Q_k^{(C)}\,+\,Q_k^{(NC)} = Q_K\\
+&= -\,\pd{V}{q_k}\,+\,Q_k^{(NC)}\\
+\td{}{t}(\pd{T}{\dot{q_k}})\,-\,\pd{T}{q_k}\,+\,\pd{V}{q_k} &=  Q_k^{(NC)}
+\end{align*}
+Siccome l'energia potenziale è funzione delle coordinate generalizzate, ma non delle loro velocità ($V = V(q_1,\dots,q_n,\cancel{\dot{q_1},\,\dots,\,\dot{q_N}})$) posso riscrivere il lhs introducendo una funzione, detta di Lagrange: $L = T\,-\,V=T(q,\dot{q},t)\,-\,V(q)$.
+In questo modo sono finalmente in grado di scrivere le equazioni di Lagrange nella seconda forma
+\begin{empheq}[box=%
+	\fbox]{gather*}
+		\td{}{t}\,\pd{L}{\dot{q_k}}\,-\,\pd{L}{q_k}\,=\,Q_k^{(NC)}\qquad\qquad k = 1,\dots,N
+	\end{empheq}
+
+\subsection{Applicazione: Pendolo su vincolo mobile}
+
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=.875\textwidth]{chapter06/Immagine136}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+\[\mathbf{OP} = \B{L_1\\v_0\,t}\,+\,L_0\,\B{\sin{\theta}\\-\,\cos{\theta}}\]
+$\theta = \theta (t)\qquad\text{vincolo dipendente dal tempo}$
+\[\mathbf{v}_P = \B{0\\v_0}\,+\,L_0\,\B{\cos{\theta}\\\sin{\theta}}\,\dot{\theta}\]
+che in forma scalare diventa:
+\begin{align*}
+\dot{x_P} &= L_0\,\cos{\theta}\,\dot{\theta}\\
+\dot{y_P} &= v_0\,+\,L_0\,\sin{\theta}\,\dot{\theta}
+\end{align*}
+\end{minipage}
+
+Procediamo al calcolo dell'energia cinematica e potenziale del sistema sotto esame:
+\begin{align*}
+T &= \cfrac{1}{2}\,m\,(L_0^2\,\cos^2{\theta}\,\dot{\theta}^2\,+\,L_0^2\,\sin^2{\theta}\,\dot{\theta}^2\,+\,2\,v_0\,L_0\,\sin{\theta}\,\dot{\theta}\,+\,v_0^2)\\
+&= \cfrac{1}{2}\,m\,(L_0^2\,\dot{\theta}^2\,+\,2\,v_0\,L_0\,\sin{\theta}\,\dot{\theta}\,+\,v_0^2)\\
+V &= m\,g\,(v_0\,t\,-\,L_0\,\cos{\theta})
+\end{align*}
+
+Utilizziamo le espressioni di energia cinetica e potenziale per determinare i termini dell'equazione di Lagrange nella seconda forma, noto che non sono presenti forze non conservative agenti sul sistema.
+\begin{align*}
+	\pd{T}{\dot{\theta}} &= m\,L_0^2\,\dot{\theta}\,+\,m\,v_0\,L_0\,\sin{\theta}\\
+	\td{}{t}(\pd{T}{\dot{\theta}}) &= m\,L_0^2\,\ddot{\theta}\,+\,m\,v_0\,L_0\,\cos{\theta}\,\dot{\theta}\\
+	\pd{T}{\theta} &= m\,v_0\,L_0\,\cos{\theta}\,\dot{\theta}\\
+	\pd{V}{\theta} &= m\,g\,L_0\,\sin{\theta}\\
+	\td{}{t}\pd{V}{\dot{\theta}} = 0
+\end{align*}
+
+
+Possiamo a questo punto scrivere che:
+\[\td{}{t}\pd{T}{\dot{\theta}}\,-\,\pd{T}{\theta}\,-\,\td{}{t}\,\pd{V}{\dot{\theta}}\,+\,\pd{V}{\theta} = 0\]
+e ottenere l'equazione del moto:
+\[m\,L_0^2\,\ddot{\theta}\,+\,m\,g\,L_0\,\sin{\theta} = 0\]
+
+
+\textbf{In generale l'energia cinetica di un corpo si compone di due termini}:
+\[\mathbf{T = \cfrac{1}{2}\,m\,v_G^2\,+\,\cfrac{1}{2}\,I_G\,\omega^2}\]
+
+
+Abbiamo dunque studiato tre diversi strumenti per scrivere le equazioni del moto di un sistema meccanico.
+
+La disponibilità di un modello matematico consente di compiere un certo numero di analisi: disegnare un sistema di controllo, trovare i parametri migliori di un sistema, ricercare le configurazioni di equilibrio e ricercare delle semplificazioni delle equazioni del moto che rendono più facilmente interpretabili le equazioni stesse in intervalli di operatività del sistema (es. attorno alla configurazione dell'equilibrio).
+
+Dall'osservazione delle equazioni del moto di un pendolo su ruota, osserviamo che la struttura delle equazioni di un sistema meccanico si presenta tramite una combinazione lineare delle accelerazioni e delle velocità al quadrato dei moventi 
+
+Possiamo dunque generalizzare il modello delle equazioni del moto di un sistema meccanico a un G.d.L. osservando che si presentano nella forma:
+\[A(q,t)\,\ddot{q}\,+\,B(q,\dot{q},\,t)=0\]
+dove:
+\begin{itemize}
+\item A è un coefficiente funzione di q e del tempo, i coefficienti dei termini di accelerazione (che possono essere considerate a tutti gli effetti delle masse generalizzate), possono essere funzione della posizione;
+\item B è un coefficiente che raccoglie i termini che dipendono dalla posizione e dalla velocità e sono in genere non lineari.
+\end{itemize}
+
+Le equazioni differenziali compaiono, cioè, lineari nelle accelerazioni tramite il coefficiente A.
+
+Siccome le equazioni sono non lineari nel parametro B(q,$\dot{q}$,t), nella stragrande maggioranza dei casi siamo incapacitati a trovare una soluzione analitica alle equazioni differenziali.
+
+Possiamo tuttavia risolvere un sistema di equazioni differenziali numericamente, ma la soluzione numerica mi dà l'evoluzione del sistema meccanico in un caso particolare e non mi permette di trarre delle conclusioni di carattere generale che il sistema potrebbe o non potrebbe avere (es. configurazioni di equilibrio, ovvero esistenza di soluzioni costanti).
+
+Sostituendo di conseguenza una costante alle equazioni del moto, posso vedere se esistono delle soluzioni che le verificano. In altri termini sto cercando le N configurazioni (di equilibrio), che risolvono l'equazione:
+\[\cancel{A(q,t)\,\ddot{q}}\,+\,B(q_0,0,t) = 0\]
+
+È possibile determinare le configurazioni di equilibrio del sistema anche cercando gli estremi della funzione energia potenziale ($\mathbf{V(q_1,\dots,q_N,t)}$) cercandone i massimi e i minimi.
+\[\pd{V}{q_k}=0\qquad\qquad k=1,\dots,N\]
+Tuutavia noi sappiamo che possiamo distinguere le configurazioni di equilibrio in \textbf{configurazioni stabili} (punto di minimo dell'energia potenziale) e \textbf{configurazioni instabili} (punto di massimo dell'energia potenziale). 
+
+Per studiare se una configurazione di equilibrio è stabile o instabile si ricorre allo studio di funzione che risulta più utile e efficace della risoluzione delle equazioni del moto.
+
+Dato che la funzione energia potenziale può essere funzione di N G.d.L. e, eventualmente del tempo, è necessario calcolare la matrice Hessiana per eseguire lo studio di funzione:
+\[\mathbf{H} = \M{\cfrac{\partial^2{V}}{\partial{q_i}\,\partial{q_j}}}\]
+Qualora la forma quadratica associata alla matrice Hessiana è definita positiva implica che allontanandosi dal punto stazionario la funzione aumenta in tutte le direzioni (il punto stazionario è un punto di minimo), se è definita negativa il punto stazionario è un punto di massimo, se è semidefinita vuol dire che ci sono delle direzioni in cui l'energia potenziale resta stazionaria ed quindi è una configurazione di equilibrio indifferente.
+
+Tramite il teroema di Silvester sappiamo che considerando tutti i minori principali della matrice Hessiana e se tutti sono positivi allora la matrice Hessiana è definita positiva.
+
+Un metodo alternativo è calcolare gli autovalori e diagonalizzare la matrice Hessiana:
+\begin{itemize}
+\item tutti gli autovalori positivi, implica che la matrice Hessiana è definita positiva;
+\item tutti gli autovalori positivi e alcuni zero, implica che la matrice Hessiana è semidefinita positiva;
+\item tutti gli autovalori negativi, implica che la matrice Hessiana è definita negativa;
+\item tutti gli autovalori negativi e alcuni zero, implica che la matrice Hessiana è semidefinita negativi;
+\end{itemize} 
+
+Per semplicità consideriamo un sistema ad 1 G.d.L., la struttura delle equazioni di un sistema meccanico con vincoli olonomi indipendenti dal tempo si compone di:
+\[A(q)\,\ddot{q}\,+\,B(q,\dot{q}) = 0\]
+Per trovare le configurazioni di equilibrio devo trovare i valori delle coordinate generalizzate $q_i$ che soddisfano tale equazione. Ovvero dato (q(t) = $q_0$), devo trovare i valori di $q_0$ che soddisfano:
+\[B(q_0,\,0) = 0\]
+Immaginiamo ora che vogliamo trovare le equazioni del moto nell'intorno della posizione di equilibrio, ovvero quando $q(t) = q_0 + dq(t)$:
+\[A(q)\,\ddot{q}\,+\,B(q,\dot{q})=0\]
+Facendo l'ipotesi che dq(t) sia infinitesimo posso sviluppare in serie l'espressione con riferimento alla soluzione costante $q_0$
