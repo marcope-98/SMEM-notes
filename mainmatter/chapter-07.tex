@@ -1,1 +1,531 @@
 \chapter{Meccanismi nello spazio}
+	\section{Meccanismi in catena chiusa}
+		I meccanismi spaziali in catena chiusa sono la naturale estensione dei tradizionali meccanismi piani, che ne costituiscono quindi una classe particolare ottenuta imponendo ai vari membri del meccanismo di giacere su un piano. Una classificazione dei meccanismi può essere fatta in base al numero e al tipo di coppie cinematiche.
+		\begin{center}
+		\includegraphics[width=.65\textwidth]{chapter07/Immagine137}
+		\end{center}
+		
+		In base a tale classificazione il meccanismo rappresentato nella figura seguente, derivato dal quadrilatero articolato piano con la sostituzione delle coppie rotoidali degli estremi della biella con coppie sferiche, viene denominato meccanismo RSSR dalla sequenza delle coppie cinematiche che in esso compaiono. A titolo di esempio sono riportati i meccanismi RSSR e RRSC.
+		\begin{center}
+		\includegraphics[width=.55\textwidth]{chapter07/Immagine138}
+		\end{center}
+
+\begin{minipage}{.625\textwidth}
+Dal punto di vista della loro utilizzazione i meccanismi spaziali (\emph{come i meccanismi piani}) possono essere progettati per realizzare tre finalità diverse:
+\begin{itemize}
+\item generazione di una certa funzione;
+\item generazione di un certo percorso;
+\item guida di un corpo rigido;
+\end{itemize}
+Come esempio applicativo di un messanismo spaziale è rapresentata la sospensione anteriore di un autoveicolo realizzata mediante un meccanismo RSSR.
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=.75\textwidth]{chapter07/Immagine139}
+\end{minipage}
+
+\section{Meccanismi in catena aperta}
+
+I meccanismi in catena aperta hanno avuto recentemente un notevole sviluppo in concomitanza con l'automazione dei processi industriali mediante l'introduzione di \textbf{robots}: manipolatore multifunzione riprogrammabile progettato per muovere materiali, parti meccaniche, utensili o dispositivi particolari per mezzo di movimenti programmati variabili per soddisfare una varietà di scopi.
+
+Pù semplicemente un robot è un meccanismo spaziale, generalmente a catena aperta, predisposto per compiere alcune attività produttive, secondo un programma memorizzato che può essere variato a seconda del ciclo di operazioni desiderato.
+
+Il robot è quindi caratterizzato da:
+\begin{itemize}
+\item \emph{una struttura meccanica} che ne definisce le possibilità di movimento in funzione dei G.d.L. delle coppie cinematiche;
+\item \emph{un sistema di azionamento}, pneumatico, oleodinamico o elettrico;
+\item \emph{un sistema di controllo} dotato di sensori e di trasduttori;
+\item \emph{una unità di governo} che in base al programma memorizzato e alle informazioni provenienti dal sistema di sensori comanda il sistema di azionamento.
+\end{itemize}
+
+A seconda dei \und{primi tre G.d.L.} della catena cinematica la struttura dei robots si può classificare come:
+\begin{itemize}
+\item \emph{struttura cartesiana} con i primi 3 G.d.L. di tipo traslazionale;
+\item \emph{struttura cilindrica} con un G.d.L. rotazionale e due traslazionali;
+\item \emph{struttura polare} con un G.d.L. traslazionali e due rotazionali;
+\item \emph{struttura articolata antropomorfa} caratterizzata da 3 G.d.L. di libertà rotazionali;
+
+A tal fine è bene accennare che il braccio umano ha 7 G.d.L.. Tale particolare potrebbe destare confusione in quanto è noto che sono sufficienti 6 G.d.L. per posizionare nello spazio il braccio: il G.d.L. aggiuntivo permette di posizionare la mano ferma nello spazio e cambiare la posizione del gomito: così facendo è possibile raggiungere la stessa posizione e orientazione della mano nello spazio con diverse posture del braccio. 
+
+Questo aspetto è utile in quanto aumenta la possibilità di intervenire in diverse zone, ma anche perché cambiando la posizione del braccio è possibile realizzare forze maggiori-minori.
+\end{itemize}
+
+\section{Analisi di mobilità}
+\subsection{Catene spaziali chiuse}
+
+Le catene spaziali chiuse possono essere mobili, permettendo il moto relativo tra i membri che le costituiscono con uno o più G.d.L., oppure possono essere delle strutture isostatiche o iperstatiche.
+
+Una serie di \emph{m} membri rigidi nello spazio, ognuno dei quali può essere assunto come membro fisso (\emph{telaio}), possiede, essendo 6 i G.d.L. di un corpo rigido nello spazio \emph{6(m-1)} G.d.L. relativi.
+
+I G.d.L. relativi di due qualsiasi membri collegati tra loro da una coppia cinematica sono ridotti di sei meno il numero di G.d.L. lasciati liberi dall'accoppiamento, ad esempio un giunto sferico toglie 3 G.d.L. ai due membri accoppiati. Ne segue che i G.d.L. di un sistema di \emph{m} membri accoppati sono:
+\[n= 6(m\,-\,1)\,-\,5\,c_1\,-4\,c_2\,-\,3\,c_3\,-\,2\,c_4\,-\,c_5\]
+\begin{itemize}
+\item Se n=0 la catena è una struttura \emph{isostatica},
+\item Se n<0 la catena è una struttura \emph{iperstatica},
+\item Se n=1 la catena è un meccanismo \emph{ad un G.d.L.},
+\item Se n>1 la catena è un meccanismo \emph{a più G.d.L.}
+\end{itemize}
+
+Un quadrilatero nello spazio è in generale iperstatico, ma se gli assi delle coppie rotoidali sono paralleli allora alcune delle rotazioni impedite dall'asse sono già state impedite dall'altro asse/vincolo.
+
+Di fatto con la formula di Gr\"ubler non tengo in considerazione che sto eliminando lo stesso G.d.L.
+
+\begin{center}
+\includegraphics[width=.65 \textwidth]{chapter07/Immagine140}
+\end{center}
+
+La figura mostra come una struttura del tipo RRRC con n = -1 possa, tramite lo sbloccaggio progressivo di alcuni G.d.L., trasformarsi in un meccanismo.
+
+La formula precedente, non facendo alcun riferimento alla geometria, non è applicabile ai cosiddetti meccanismi sovravincolati i quali si possono muovere solo in virtù della presenza di particolari piani di simmetria o di assi paralleli.
+
+Un'atra particolarità dei meccanismi spaziali è che tra i G.d.L. ve ne sono alcuni, detti passivi, poiché riguardano la mobilità di un solo membro e non del cinematismo nel suo insieme.
+
+\begin{minipage}{.5\textwidth}
+Ad esempio, nel meccanismo RSSR, la biella ha la possibilità di ruotare attorno al proprio asse indipendentemente dal moto del resto della struttura; tale proprietà viene sfruttata nell'operazione di sterzatura. Dal calcolo dei G.d.L.  con la formula di Gr\"ubler, si ottiene:
+\[n = 6(4-1) - 5 \cdot 2 - 3\cdot 2 = 2 \text{G.d.L.}\]
+I 2 G.d.L. sono il movimento del quadrilatero ($\theta_1$) e la rotazione dell'asse della biella attorno al suo asse $(\theta_2$).
+\end{minipage}
+\hfill
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=.95\textwidth]{chapter07/Immagine141}
+\end{minipage}
+
+Può essere che se il G.d.L. di $\theta_2$ non venga sfruttato, immaginando di voler utilizzare la biella semplicemente per trasmettere il movimento tra gli assi delle coppie rotoidali, l'asta funge solamente da tirante o puntone e il G.d.L. in questione è detto passivo o interno (ovvero quando la relazione tra $\theta_1$ e $\theta_3$ non è funzione della rotazione attorno all'asse dell'asta intermedia):
+\[\theta_3 = \theta_3(\theta_1)\qquad;\qquad \theta(q_1, \cancel{q_2}, \dots,q_n)\]
+
+\subsection{Catene spaziali aperte}
+
+Le catene cinematiche aperte sono sempre dotate della capacità di movimento con un numero di G.d.L. pari a:
+\[n = c_1\,+\,2\,c_2\,+\,3\,c_3\,+\,4\,c_4\,+\,5\,c_5\]
+ovvero il G.d.L. dell'insieme è uguale alla somma dei G.d.L. lasciati liberi dalle coppie cinematiche presente.
+
+Poiché un corpo rigido nello spazio ha 6 G.d.L., questo è il valore minimo del grado di mobilità necessario per specificare in maniera completa la posizione dell'estremo del manipolatore, cioè della mano.
+
+I manipolatori con n<6 sono capaci solo di moti particolari e di particolari posizionamenti e orientazioni della mano.
+
+Se n>6 il manipolatore è invece capace di moti complessi e i G.d.L. aggiuntivi (n-6) sono definiti gradi di manovrabilità.
+
+Tali gradi supplementari possono essere utiizzati ad esempio per guidare la mano in modo tale che la catena cinematica possa evitare determinati ostacoli nel campo di lavoro. L'azione di presa della mano rappresenta un ulteriore G.d.L. che chiaramente non influenza la mobilità dell'intera catena.
+
+\section{Matrice di rotazione nello spazio}
+	\subsection{Angoli di Cardano}
+
+	\begin{minipage}{.6\textwidth}	
+	Possiamo estendere il concetto di matrice di rotazione, precedentemente visto per il caso piano, anche per lo spazio. 
+	
+	Immaginiamo di avere un S.d.R. $(c_1, c_2, c_3)$ e di compiere una rotazione attorno all'asse zeta pari a $\theta$: otteniamo gli assi \textbf{i} e \textbf{j}, mentre l'asse \textbf{k} coincide con l'asse $c_3$. 
+	
+	Di conseguenza, si può scrivere:
+\begin{align*}
+\mathbf{i} &= \cos{\theta}\,\mathbf{c_1}\,+\,\sin{\theta}\,\mathbf{c_2}\,+\,0\,\mathbf{c_3}\\ 
+\mathbf{j} &= -\,\sin{\theta}\,\mathbf{c_1}\,+\,\cos{\theta}\,\mathbf{c_2}\,+\,0\,\mathbf{c_3}\\
+\mathbf{k} &= 0\,\mathbf{c_1}\,+\,0\,\mathbf{c_2}\,+\,1\,\mathbf{c_3}
+\end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}{.35\textwidth}
+\centering
+\includegraphics[width=.675\textwidth]{chapter07/Immagine142}
+\end{minipage}
+
+Dunque il generico vettore OP:
+\begin{align*}
+\mathbf{OP} =& x_P^m\,\mathbf{i}\,+\,y_P^m\,\mathbf{j}\,+\,z_P^m\,\mathbf{k}\\
+=& x_P^m\,(\cos{\theta}\,\mathbf{c_1}\,+\,\sin{\theta}\,\mathbf{c_2})\,+\,y_P^m\,(-\,\sin{\theta}\,\mathbf{c_1}\,+\,\cos{\theta}\,\mathbf{c_2})\,+\,z_P^m\,\mathbf{c_3}\\
+=& (x_P^m\,\cos{\theta}\,-\,y_P^m\,\sin{\theta})\,\mathbf{c_1}\,+\,(x_P^m\,\sin{\theta}\,+\,y_P^m\,\cos{\theta})\,\mathbf{c_2}\,+\,z_P^m\,\mathbf{c_3}
+\end{align*}
+
+Separando le componenti x, y e z posso pensare all'espressione sopra ricavate come il prodotto tra matrici:
+\[\B{x_P^f\\y_P^f\\z_P^f} = \M{\cos{\theta}&-\,\sin{\theta}&0\\\sin{\theta}&\cos{\theta}&0\\0&0&1}\,\B{x_P^m\\y_P^m\\z_P^m}\]
+Dove la matrice è detta matrice di rotazione attorno all'asse z dell'angolo $\theta$.
+
+Analogamente per le rotazioni attorno agli assi y e x nei piani zx e yz rispettivamente, si ottiene una matrice di rotazione per:
+\begin{itemize}
+\item la rotazione attorno all'asse y
+\[R_y(\theta) = \M{\cos{\theta}&0&\sin{\theta}\\0&1&0\\-\,\sin{\theta}&0&\cos{\theta}}\]
+\item la rotazione attorno all'asse x
+\[R_x(\theta) = \M{1&0&0\\0&\cos{\theta}&-\,\sin{\theta}\\0&\sin{\theta}&\cos{\theta}}\]
+\end{itemize}
+Abbiamo ottenuto tre formule e tre matrici che rappresentano le rotazioni attorno all'asse x,y e z; una rotazione sferica generica può essere descritta tramite le tre successive rotazioni piane: per far ciò introduco la nozioni di \textbf{angoli di Cardano}: ovvero gli angoli delle tre rotazioni per passare da un S.d.R. fisso ad uno mobile di orientazione generica.
+
+Le tre rotazioni corrispondono a 3 G.d.L. della sequenza di 3 rotazioni $R_x(\gamma)\,R_y(\beta)\,R_z(\alpha)$. Sono particolarmente utili per rotazioni attorno agli assi particolarmente piccole.
+
+Generalmente nella descrizione della dinamica dei veicoli si distingue tra:
+\begin{itemize}
+\item La rotazione attorno al'asse z (asse verticale) è detta \textbf{imbardata};
+\item La rotazione attorno all'asse ortogonale alla direzione di avanzamento è detta \textbf{beccheggio};
+\item La rotazione attorno alla direzione di avanzamento è detta \textbf{rollio};
+\end{itemize}
+
+Generalmente rollio e beccheggio sono angoli piccoli e quindi le linearizzazione rispetto alle loro rotazioni sono semplici.\newline
+
+Possiamo vedere come si compongono più rotazioni: consideriamo il caso in cui abbiamo un Sd.R \textbf{n} e un S.d.R $\mathbf{n+1}$ ottenuto dalla rotazione attorno all'asse z di un angolo $\theta$. Definisco la matrice di rotazioni dal S.d.R \textbf{n} al S.d.R. $\mathbf{n+1}$ quella matrice che contiene nelle sue colonne i coseni direttori degli assi $\mathbf{i_{n+1}}$, $\mathbf{j_{n+1}}$ e $\mathbf{k_{n+1}}$ (coseni degli assi del sistema n+1 proiettati nel sistema n).
+ 
+Immaginando ora di avere più di un S.d.R. e di conseguenza più di una matrice di rotazione: posso dire che la matrice di rotazione dal generico sistema n+1 al sistema n è la matrice che mi dà i coseni direttori del sistema n+1 nel sistema n, quindi avendo un vettore v nel sistema n+1 posso calcolare il vettore v nel sistema n nel seguente modo:
+ \[\leftidx{^n}{\B{v}} = \leftidx{_{n+1}^n}{\M{R}}\,\,\leftidx{^{n+1}}{\B{v}}\]
+ Mettendo insieme tutte le trasformazioni per portare un S.d.R. \textbf{N} ad un S.d.R. $\mathbf{0}$ la matrice di rotazione associata alla rotazione complessiva risulterà essere pari al prodotto delle matrici di rotazioni di tutte le rotazioni intermedie/elementari:
+ \[\leftidx{^N_0}{\M{R}} = \leftidx{^1_0}{\M{R}}\leftidx{^2_1}{\M{R}}\leftidx{^3_2}{\M{R}}\dots \leftidx{^N_{N-1}}{\M{R}}\]
+ Possiamo costruire matrici di rotazioni complesse a piacere moltiplicando matrici di rotazione corrispondenti alle rotazioni elementari che noi eseguiamo in sequenza per allineare la terna di riferimento assoluta con quella mobile.
+ 
+ \subsection{Angoli di Eulero e varianti}
+ Ci sono varianti alternative per definire la posizione nello spazio: posso cioé decidere sequenze diverse di rotazioni. Ciò nonostante quando la rotazione avviene attorno agli assi della terna di riferimento assoluto gli angoli in questione sono detti di Cardano.
+
+In astronomia esistono altri angoli, in alternativa a quelli di Cardano, per descrivere l'orientazione di un corpo nello spazio: gli \textbf{Angoli di Eulero}.
+
+Si presenta il concetto tramite un esempio applicativo:
+
+Consideriamo un S.d.R. solidale alla Terra con asse z coincidente con l'asse polare e con asse x nella retta congiungente la Terra al Sole.
+
+Immaginiamo di rappresentare l'orbita della Luna appartenente ad un piano inclinato rispetto all'orbita terrestre rappresentata da una semicirconferenza. Viene anche rappresentata, con una retta, la linea dei nodi, ovvero la linea di intersezione tra i piani contenenti le orbita di Terra e Luna.
+
+Possiamo dunque ammettere l'esistenza di un secondo S.d.R. orientato in maniera del tutto arbitraria solidale all'orbita lunare. 
+
+\begin{minipage}{.5\textwidth}
+Qual è la sequenza di rotazioni che devo eseguire per orientare il S.d.R. $(x_0, y_0, z_0)$ solidale all'orbita terrestre con il S.d.R. $(x_1, y_1, z_1)$ solidale all'orbita lunare?\newline
+
+Un modo per far ciò è il seguente: consideriamo i piani $x_0 y_0$ e $x_1 y_1$. Siccome i due S.d.R. hanno medesima origine i due piani si intersecheranno in corrispondenza di una linea detta \textbf{linea dei nodi} (N).
+
+Una volta individuata la linea dei nodi posso orientare il sistema 0 con il sistema 1 in quanto basta compiere: una rotazione $R_z(\alpha)$ che porta l'asse $x_0$ a coincidere con l'asse dei nodi e una rotazione $R_x(\beta)$ dove $\beta$ è l'angolo formato tra i piani $x_0 y_0$ e $x_1 y_1$. (in questo modo gli assi $z_0$ e $z_1$ coincideranno)
+
+Infine bisogna ruotare attorno all'asse z di un angolo $\gamma$ ($R_z(\gamma)$).
+\[R = R_z(\gamma)\,R_x(\beta)\,R_z(\alpha)\]
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width= .75\textwidth]{chapter07/Immagine143}
+\end{minipage}
+\vspace{1mm}
+
+I tre angoli rappresentati dalle rotazioni in questa successione sono detti angoli di Eulero.
+
+Sia gli angoli di Eulero che quelli di Cardano possono essere non definiti come nel caso in cui i due S.d.R. coincidono: qualsiasi sia la sequenza di trasformazioni che si vuole eseguire (Cardano o Eulero) esiste una condizione di singolarità.
+
+\subsection{Metodo di Gupta}
+
+Il metodo di Gupta è un metodo per l'analisi cinematica dei meccanismi in catena chiusa, si potrebbe applicare anche nel piano, ma nello spazio è più facile utilizzarlo.
+
+Il metodo consiste nel prendere una catena cinematica, separarla (aprendo una coppia della catena cinematica o togliendo un corpo) ottenendo di conseguenza due rami aperti; così facendo si può eseguire l'analisi cinematica dei singoli rami aperti (ovvero come singole catene cinematiche aperte) e si impone una condizione di congruenza che corrisponde al fatto che la geometria del corpo intermedio deve essere rispettata.\newline
+
+Formalmente: \emph{Il metodo di Gupta serve ad effettuare l'analisi cinematica dei meccanismi in catena chiusa. In vista della possibilità di applicarlo ad un generico meccanismo spaziale chiuso è utile per fare alcune considerazioni sulla rappresentazione di moti relativi tramite la rotazione matriciale.}
+
+\begin{center}
+{\scshape{\bfseries Esempio N.1: meccanismo RSSR}}
+\end{center}
+
+
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width=.8\textwidth]{chapter07/Immagine144}
+\end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+Dato un quadrilatero articolato nello spazio RSSR posso immaginare di togliere la biella intermedia.
+
+In questo modo si ottengono due catene ciematiche aperte indipendenti ciascuna con 1 G.d.L.: 
+\begin{itemize}
+\item La rotazione della prima manovella sarà definita da un angolo $\alpha$. Data questa catena cinematica è possibile calcolare la posizione del punto A
+\item La rotazione della seconda manovella sarà definita da un angolo $\beta$. Siccome ho aperto la catena cinematica eliminando la biella intermedia, posso immaginare che tale manovella sia indipendente dalla prima e tramite la rotazione $\beta$ calcolare la posizione del punto B
+\end{itemize}
+\end{minipage}
+
+Così facendo: dato $\alpha$ posso calcolare la posizione del punto A, dato $\beta$ calcolare la posizione del punto B; a questo punto è possibile scrivere un'equazione di congruenza in quanto la distanza dei punti A e B deve essere costante e pari alla lunghezza del corpo che era stato sottratto.
+
+Sotto altri termini tale metodo consiste nell'eseguire l'analisi cinematica di due catene cinematiche aperte e scrivere un'equazione di congruenza che leghi $\alpha$ a $\beta$
+
+\begin{center}
+{\scshape{\bfseries Esempio N.2: Giunto di Cardano}}
+\end{center}
+
+I giunti sono dei meccanismi che consentono di trasmettere il moto tra due alberi quando questi presentano dei \emph{disallineamenti angolari o radiali o assiali}, in genere variabili nel tempo.
+
+Un requisito dei giunti è la \emph{omocineticità}; un giunto si dice omocinetico quando il suo rapporto di trasmissione è costante.
+
+Consideriamo i giunti per disallineamenti angolari. Vale la pena osservare che se il disallineamento fosse costante si potrebbe usare per trasmettere il moto una coppia di ruote dentate coniche.
+
+Consideriamo il giunto di Cardano, che è il più diffuso giunto per la trasmissione del moto tra alberi concorrenti in un punto, i cui assi formano tra loro un certo angolo variabile durante il funzionamento. Il massimo angolo consentito è di circa 15$\deg$ alle alte velocità.
+
+Esso è un meccanismo spaziale; è formato da una crociera i cui bracci a due a due si impegnano entro due forcelle che sono solidali ai due alberi da collegare, che a loro volta sono solidali al telaio.
+
+Questo meccanismo possiede 1 G.d.L. grazie alla particolare geometria, infatti gli assi delle coppie rotoidali sono ortogonali tra di loro.
+
+Ci proponiamo di calcolare il rapporto di trasmissione, lo studio cinematico può essere effettuato imponendo la condizione di rigidità della crociera.
+\begin{center}
+\includegraphics[width=.8\textwidth]{chapter07/Immagine145}
+\end{center}
+
+Sia x,y,z un S.d.R. assoluto solidale al telaio e sia la coppia cinematica rotoidale appartenente al corpo 1 solidale al telaio. Il corpo numero 1 è vincolato da un coppia rotoidale a ruotare attorno all'asse 1 di un angolo $\theta_1$.
+
+Sempre solidale al telaio, ma in una direzione $\alpha$ variabile (che mentre il meccanismo si può muove può essere immaginato fisso), è presente una coppia rotoidale appartenente al corpo 2; in questo modo il corpo numero 2 ruota rispetto a tale coppia rotoidale dell'angolo $\theta_2$ .
+
+Lo scopo del giunto di Cardano è quello di trasmettere il moto rotatorio attorno all'asse 1 su un asse 2 che sia incidente con l'asse 1, ma di direzione leggermente diversa.
+
+Il meccanismo è un meccanismo spaziale a 4 R: abbiamo visto che un meccanismo spaziale avrebbe in teoria -2 G.d.L. (conti eseguiti con la formula di Grubler), tuttavia il giunto di Cardano non è iperstatico, infatti è uno di quei casi particolari in cui il meccanismo ha mobilità nonostante la formula di Grubler dica il contrario, e questo è possibile perché gli assi delle forcelle 1 e 2 sono incidenti nel punto O.\newline
+
+Procediamo, dunque ad eseguire l'analisi cinematica del giunto in esame con il metodo di Gupta: procederemo a rimuovere la crociera e immagino di calcolare la direzione del vettore OA dato $\theta_1$, immaginando di conoscere l'angolo $\alpha$ si procederà al calcolo della direzione del vettore OB dato $\theta_2$.
+
+Una volta espressi i vattori OA e OB in funzione di $\theta_1, \theta_2$ e $\alpha$ impongo la condizione di Gupta, ovvero che i due vettori siano ortogonali.
+
+Il punto A si muove nel piano xy e $\theta_1$ è la rotazione della forcella a partire dalla configurazione nella quale il punto A è sull'asse y. Le sue componenti saranno:
+\[\mathbf{OA} = \B{-\,\sin{\theta_1}\\\cos{\theta_1}\\0}\]
+ Il punto B si muove su un piano ortogonale all'asse 2: nella configurazione di riferimento il vettore $\mathbf{OB}$ appartiene al piano xz (in quanto ortogonale ad $\mathbf{OA}$), spostato di un angolo $\alpha$ dall'asse x.
+ 
+Dalla proiezione del vettore $\mathbf{OB}$ sulla terna di riferimento si ricava:
+\begin{itemize}
+\item la componente y, immediata da calcolare, è pari a $-\,\sin{\theta_2}$
+\item la componente sull piano xz invece si ottiene con il $\cos{\theta_2}$
+\end{itemize} 
+
+Sarà a questo punto opportuno proiettare nuovamente il vettore $\mathbf{OB_{xz}}$ sugli assi x e z: ciò possibile moltiplicando per il sin/cos dell'angolo $\alpha$. Così facendo le componenti del vettore $\mathbf{OB}$ sul S.d.R. fisso risultano essere:
+\[\mathbf{OB} = \B{-\,\cos{(\theta_2)}\,\cos{(\alpha)}\\-\,\sin{\theta_2}\\\cos{(\theta_2)}\,\sin{(\alpha)}}\]
+Una volta trovata l'espressione per i vettori $\mathbf{OA}$ e $\mathbf{OB}$ a catena cinematica interrotta imponiamo la condizione di Gupta, ovvero imponiamo che i due vettori siano ortogonali:
+\[\sin{\theta_1}\,\cos{\theta_2}\,\cos{\alpha}\,-\,\cos{\theta_1}\,\sin{\theta_2} = 0\]
+Posso, a questo punto, trovare una relazione tra $\theta_1$ e $\theta_2$ dividendo per $\cos{\theta_1}\,\cos{\theta_2}$:
+\[\tan{\theta_2} = \tan{\theta_1}\,\cdot\,\cos{\alpha}\]
+Continuando l'analisi cinematica del giunto di Cardano, risulta di interesse il calcolo del rapporto di velocità: si procede dunque a derivare rispetto al tempo l'espressione appena ottenuta, la quale assume a tutti gli effetti il risultato dell'analisi di posizione (dato l'angolo $\theta_1$ posso calcolare direttamente l'angolo $\theta_2$):
+\[\tau_{21} = \cfrac{\dot{\theta_2}}{\dot{\theta_1}} = \cfrac{\cos^2{\theta_2}}{\cos^2{\theta_1}}\,\cdot\,\cos{\alpha}\]
+Per esprimere il rapporto di velocità in funzione della sola rotazione dell'albero motore si eleva al quadrato la relazione ricavata dall'analisi di posizione, ottenendo:
+\[\cos^2{\theta_2} = \cfrac{1}{(1\,+\,\tan^2{\theta_1}\,\cos^2{\alpha})}\]
+A questo punto, sostituendo tale relazione all'espressione del rapporto di velocità:
+\[\tau_{21} = \cfrac{\cos{\alpha}}{1\,-\,\sin^2{\alpha}\,\sin^2{\theta_1}}\]
+Osserviamo che il rapporto di trasmissione non è costante ma varia con la configurazione, quindi il giunto di Cardano è non omocinetico. Il rapporto di trasmissione ha valore medio unitario ed oscilla tra un valore minimo pari a $\cos{\alpha}$ che si ottiene per $\theta_1 = k\,\pi$ e un valore massimo $1/\cos{\alpha}$ che si ottiene per $\theta_1 = (2k+1)\,\pi/2$
+
+\begin{center}
+\includegraphics[width=.95\textwidth]{chapter07/Immagine146}
+\end{center}
+
+La differenza tra valore massimo e minimo vale $\Delta \tau = \cfrac{1}{\cos{\alpha}} - \cos{\alpha}$.
+
+Un giunto si dice omocinetico quando il rapporto di velocità è costante. 2 giunti di Cardano con deviazione $\alpha /2$, sempre se il corpo intermedio sia complanare, ovvero $\theta_1 = \theta_1*$ è un giunto omocinetico.
+\begin{center}
+\includegraphics[width=0.6\textwidth]{chapter07/Immagine147}
+\end{center}
+Si può infatti ottenere una trasmissione omocinetica avente $\tau = 1$ adoperando due giunti cardanici in serie con le forcelle dell'albero intermedio poste nello stesso piano e con inclinazioni uguali.
+
+Se le forcelle intermedie non fossero state poste nello stesso piano il giunto risulterebbe non omocinetico.
+
+\section{Velocità angolare di un S.d.R}
+
+Abbiamo visto come sia possibile descrivere la posizione di un S.d.R. mobile attraverso la matrice di rotazione: sia f un S.d.R. assoluto e m una terna mobile, la matrice di rotazione R è quella matrice che raccoglie nelle sue colonne i coseni direttori della terna mobile.
+
+Le espressioni di questi termini possono essere ricavate tramite una trasformazione per successive trasformazioni elementari atte a riportare il S.d.R. mobile a coincidere con quello fisso: in particolare, gli angoli di Eulero e gli angoli di Cardano. Tali espressioni che compongono la matrice di rotazione ci consentono attraverso una semplice derivata temporale di risalire alla velocità angolare $\omega$ della terna mobile.
+
+Per fare ciò sviluppiamo il nostro ragionamento partendo dalle formule di Poisson, infatti è noto che:
+\[\td{\mathbf{i}}{t} = \und{\omega} \wedge \mathbf{i}\quad;\quad \td{\mathbf{j}}{t} = \und{\omega}\wedge\mathbf{j}\quad;\quad\td{\mathbf{k}}{t} = \und{\omega}\wedge\mathbf{k}\]
+Ricordiamo che in notazione matriciale, l'operatore prodotto esterno può essere rappresentato premoltiplicando il vettore al secondo membro per una matrice:
+\[\mathbf{a}\wedge\mathbf{b} = \M{0&-\,a_z&a_y\\a_z&0&-\,a_x\\-\,a_y&a_x&0}\,\B{b_x\\b_y\\b_z}\]
+Di conseguenza: i tre prodotti esterni possono essere riscritti nel seguente modo:
+\[\{\dot{\mathbf{i}}\} = \M{0&-\omega_z&\omega_y\\\omega_z&0&-\omega_x\\-\omega_y&\omega_x&0}\,\{\mathbf{i}\}\]
+Un ragionamento analogo può essere compiuto per i rimanenti due vettori \textbf{j} e \textbf{k}
+
+È possibile a questo punto raccogliere i vettori colonna delle derivate dei coseni direttori in una matrice:
+\[[\{\dot{\mathbf{i}}\}\,\{\dot{\mathbf{j}}\}\,\{\dot{\mathbf{k}}\}] = [P_{\omega}]\,[\mathbf{i}\,\mathbf{j}\,\mathbf{k}]\]
+Osserviamo che:
+\begin{itemize}
+\item $P_{\omega}$ è l'operatore velocità angolare
+\item $[\mathbf{i}\,\mathbf{j}\,\mathbf{k}]$ è la matrice di rotazione
+\item $[\{\dot{\mathbf{i}}\}\,\{\dot{\mathbf{j}}\}\,\{\dot{\mathbf{k}}\}]$ è la matrice di rotazione derivata rispetto al tempo in quanto tutti i suoi elementi sono derivati rispetto al tempo
+\end{itemize}
+
+In sintesi $[\dot{R}] = [P_{\omega}]\,[R]$. Questa relazione mi premette di calcolare la velocità angolare di una terna mobile: per convincerci di ciò procediamo a descrivere il metodo iterativo che dovrà essere seguito.\newline
+
+\subsection{Velocità angolare in un S.d.R. fisso}
+Qualora fossi interessato ad eseguire il calcolo nel S.d.R. fisso, osserverei che la matrice [R] è, in realtà, la matrice di rotazione del sistema mobile vista nel sistema fisso infatti le colonne di tale matrice sono proprio le componenti \textbf{i, j, k} proiettate nel sistema assoluto.
+
+ Poiché abbiamo deciso di eseguire i calcoli nel S.d.R. fisso, $[P_{\omega}]$ conterrà le componenti del vettore velocità angolare nel S.d.R. assoluto e di conseguenza il risultato sarà la matrice che mi ritorna le derivate rispetto al tempo di \textbf{i, j, k} calcolate nel S.d.R. assoluto.
+ 
+Conoscendo le componenti della matrice di rotazione o le sue espressioni, è possibile eseguirne le derivate temporali: al fine di ricavare la matrice $[P_{\omega}]$ sarà sufficiente moltiplicare per la matrice inversa (che coincide con la traposta) della matrice di rotazione:
+ \[\leftidx{_f}{\M{\dot{R}}}\quad\leftidx{_f^m}{\M{R}}{^T} = \M{P_{\omega}}\]
+ 
+ \subsection{Velocità angolare in un S.d.R. mobile}
+ Qualora fossi interessato ad eseguire il medesimo calcolo nel S.d.R. mobile, perché in esso il tensore di inerzia è costante (è quindi più utile conoscere le componenti della velocità angolare nella terna mobile per calcolare il momento della quantità di moto o per calcolare l'energia cinetica), è preferibile riscrivere le formule di Poisson nel S.d.R. mobile:
+\[\leftidx{_m}{\M{\dot{R}}} = \leftidx{_m}{\M{P_{\omega}}}\quad\leftidx{_m^m}{\M{R}}\]
+dove:
+\begin{itemize}
+\item la matrice di rotazione dalla terna mobile alla terna mobile non è altro che la matrice identità
+\item avrei bisogno di determinare la matrice delle derivate dei coseni direttori nella terna mobile: il problema giace nel fatto che io dispongo delle espressioni $\leftidx{_f^m}{\M{R}}$, ovvero dei coseni direttori della terna mobile proiettati nella terna fissa.
+
+Posso dunque calcolare la matrice $\leftidx{_f^m}{\M{\dot{R}}}$ e premoltiplicare per la matrice di trasformazione da fisso a mobile (matrice di rotazione) $\leftidx{_m^f}{\M{R}}$
+\end{itemize}
+Si ottiene dunque che:
+\[\leftidx{_m^f}{\M{R}}\quad\leftidx{_f^m}{\M{\dot{R}}} = \leftidx{_m}{\M{P_{\omega}}}\]
+In ultima analisi ottengo che:
+\[\leftidx{_m}{\M{P_{\omega}}} = [R^T]\,[\dot{R}]\qquad;\qquad \leftidx{_f}{\M{P_{\omega}}} = [\dot{R}]\,[R^T]\]
+
+\section{Energia cinetica di corpi rigidi nello spazio}
+
+Nelle equazioni cardinali della dinamica è presente un termine legato alla velocità angolare: in particolare, la velocità angolare è fondamentale per scrivere la seconda equazione cardinale della dinamica nello spazio (anche conosciuta come equazione di Eulero).
+
+Abbiamo visto anche che è possibile scrivere le equazioni del moto con altri due metodi: il PLV e le equazioni di Lagrange. In quest'ultime è richiesto che venga calcolata l'energia cinetica e l'energia potenziale del sistema.
+
+L'energia potenziale nello spazio è facilmente calcolabile: infatti, l'energia potenziale gravitazionale è sempre \textbf{m g h}, mentre l'energia potenziale elastica è legata all'allungamento di eventuali molle.
+
+Procediamo, dunque, ad esprimere l'energia cinetica di un sistema meccanico nello spazio.\newline
+
+\begin{minipage}{.65\textwidth}
+Immaginiamo di avere un corpo rigido di volume \textbf{V} e consideriamo un punto generico appartenente al corpo stesso \textbf{Q}. Al fine di calcolare l'energia cinetica di questo punto, sia \emph{dm} una particella intorno a Q, ovvero sia $dm = \mu\,dV$ (dove $\mu$ è la densità del continuo).
+
+L'energia cinetica del corpo può essere calcolata nel seguente modo:
+\[T = \int_V \cfrac{1}{2}\,v_Q^2\,dm\]
+\end{minipage}
+\hfill
+\begin{minipage}{.35\textwidth}
+\centering
+\includegraphics[width=.65\textwidth]{chapter07/Immagine148}
+\end{minipage}
+\vspace{2mm}
+
+Si è particolarmente interessati all'energia cinetica di un corpo rigido in quanto se un corpo non fosse rigido l'integrale non sarebbe risolvibile poiché è richiesto che sia nota la velocità di tutti i punti del corpo per poterne eseguire il calcolo.
+
+Nel corpo rigido, inoltre, sappiamo che esiste la formula fondamentale della cinematica dei moti rigidi la quale afferma che: preso un polo P qualsiasi, possiamo scrivere che:
+\[\mathbf{v_Q} = \mathbf{v_P} + \und{\omega} \wedge \mathbf{PQ}\]
+Il vettore \textbf{PQ} sarà successivamente identificato con la notazione \textbf{r}.
+
+È possibile di conseguenza sviluppare l'espressione dell'energia cinetica, ricordando che:
+\begin{align*}
+v_Q^2 &= (\mathbf{v_P} + \und{\omega}\wedge\mathbf{r})\,\cdot (\mathbf{v_P} + \und{\omega}\wedge\mathbf{r}) \\
+&= \mathbf{v_P}\,\cdot\,\mathbf{v_P}\,+\,2\,\mathbf{v_P}\,\cdot\,(\und{\omega}\wedge\mathbf{r})\,+\,(\und{\omega}\wedge\mathbf{r})\cdot(\und{\omega}\wedge\mathbf{r})
+\end{align*}
+
+Sfruttando a questo punto le proprietà di linearità degli integrali è possibile sviluppare l'espressione dell'energia cinetica:
+\[T = \cfrac{1}{2}\,\int_V v_P^2\,dm\,+\,\int_V \mathbf{v_P}\,\cdot\,(\und{\omega}\wedge\mathbf{r})\,dm\,+\,\cfrac{1}{2}\,\int_V\,(\und{\omega}\wedge\,\mathbf{r})^2\,dm\]
+Osservazioni:
+\begin{enumerate}
+\item La velocità del punto P è costante e di conseguenza può essere estratta dal segno di integrale
+\item Se il punto P è un punto fisso, ovvero tale che la sua velocità è nulla, allora i primi due termini non contribuiscono al calcolo dell'energia cinetica
+\item Se il punto P coincide con il baricentro/centro di gravità del corpo (o del sistema di corpi in esame) l'espressione si semplifica in quanto il secondo termine non dà alcun contributo.
+\end{enumerate}
+
+Da adesso in poi, al fine di semplificare i calcoli analitici, imponiamo la condizione che il polo P coincida con il baricentro G:
+\begin{align*}
+T &= \cfrac{1}{2}\,\int_V \mathbf{v_G}^2\,dm \,+\,\int_V \mathbf{v_G}\,\cdot\,(\und{\omega}\wedge\,\mathbf{r})\,dm\,+\,\cfrac{1}{2}\,\int_V\,(\und{\omega}\,\wedge\,\mathbf{r})^2\,dm\\
+&= \cfrac{1}{2}\,\mathbf{v_G}^2 \,M\,+\,\mathbf{v_G}\,\cdot\,(\und{\omega}\,\wedge\,\int_V\,\mathbf{r}\,dm)\,+\,\cfrac{1}{2}\,\int_V\,(\und{\omega}\,\wedge\,\mathbf{r})^2\,dm\\
+&= \cfrac{1}{2}\,\mathbf{v_G}^2 \,M\,+\,\mathbf{v_G}\,\cdot\,(\und{\omega}\,\wedge (M\,\mathbf{r_G}))\,+\,\cfrac{1}{2}\,\int_V\,(\und{\omega}\,\wedge\,\mathbf{r})^2\,dm\\
+&\text{osserviamo che P coincide con il baricentro e di conseguenza } \mathbf{r_G} = 0\\
+&=  \cfrac{1}{2}\,M\,\mathbf{v_G}^2 \,+\,\cfrac{1}{2}\,\int_V\,(\und{\omega}\,\wedge\,\mathbf{r})^2\,dm\\
+&=  \cfrac{1}{2}\,M\,\mathbf{v_G}^2 \,+\,\cancel{(-1)(-1)}\,\cfrac{1}{2}\,\int_V\,(\mathbf{r}\,\wedge\,\und{\omega})\,\cdot\,(\mathbf{r}\,\wedge\,\und{\omega})\,dm
+\end{align*}
+
+Ricordiamo ora le seguenti proprietà del prodotto vettoriale e del prodotto scalare:
+\begin{enumerate}
+\item Il prodotto vettoriale può essere espresso in forma matriciale, perciò:
+\[ \{\mathbf{r}\wedge\und{\omega}\} = \M{P_r}\,\B{\omega_x\\\omega_y\\\omega_z}\,=\,\M{0&-z&y\\z&0&-x\\-y&x&0}\,\B{\omega_x\\\omega_y\\\omega_z  }\]
+\item Il prodotto scalare tra due vettori può essere espresso come prodotto tra vettori: siano \textbf{a} e \textbf{b} due vettori, allora:
+\[\mathbf{a}\cdot \mathbf{b} = \mathbf{a}^T \,\mathbf{b}\]
+di conseguenza:
+\[(\mathbf{r}\,\wedge\,\und{\omega})\,\cdot\,(\mathbf{r}\,\wedge\,\und{\omega}) = \B{\omega}^T\,\M{P_r}^T\,\M{P_r}\,\B{\omega}\]
+\end{enumerate}
+
+L'espressione dell'energia cinetica può dunque essere sviluppata:
+\[T =  \cfrac{1}{2}\,M\,\mathbf{v_G}^2 \,+\,\cfrac{1}{2}\,\int_V\, \B{\omega}^T\,\M{P_r}^T\,\M{P_r}\,\B{\omega}\,dm\]
+Poiché la elocità angolare è costante, il vettore $\omega$ può essere estratto dal segno dell'integrale
+\[T =  \cfrac{1}{2}\,M\,\mathbf{v_G}^2 \,+\,\cfrac{1}{2}\, \B{\omega}^T\,(\int_V\,\M{P_r}^T\,\M{P_r}\,dm)\,\B{\omega}\]
+In conclusione eseguiamo il prodotto tra matrici $\M{P_r}^T\,\M{P_r}$ e osserviamo che essa coincide con il tensore d'inerzia. Infatti:
+\[\M{P_r}^T\,\M{P_r} = \M{0&z&-y\\-z&0&x\\y&-x&0}\,\M{0&-z&y\\z&0&-x\\-y&x&0} = \M{z^2\,+\,y^2&-xy&-xz\\-xy&z^2\,+\,x^2&-zy\\-xz&-yz&y^2\,+\,x^2}\]
+L'integrale diventa dunque:
+\begin{align*}
+ T &= \cfrac{1}{2}\,M\,\mathbf{v_G}^2\,+\,\cfrac{1}{2}\,\und{\omega}^T\,\int_V\,\M{z^2\,+\,y^2&-xy&-xz\\-xy&z^2\,+\,x^2&-zy\\-xz&-yz&y^2\,+\,x^2}\,dm\,\und{\omega}\\
+ &= \cfrac{1}{2}\,M\,\mathbf{v_G}^2\,+\,\cfrac{1}{2}\,\und{\omega}^T\,\M{\int_V\,z^2\,+\,y^2\,dm&\int_V\,-xy\,dm&\int_V\,-xz\,dm\\\int_V\,-xy\,dm&\int_V\,z^2\,+\,x^2\,dm&\int_V\,-zy\,dm\\\int_V\,-xz\,dm&\int_V\,-yz\,dm&\int_V\,y^2\,+\,x^2\,dm}\,\und{\omega}\\
+ &=  \cfrac{1}{2}\,M\,\mathbf{v_G}^2\,+\,\cfrac{1}{2}\,\und{\omega}^T\,\M{I_{xx}&-\,I_{xy}&-\,I_{xz}\\-\,I_{xy}&I_{yy}&I_{yz}\\-\,I_{xz}&-\,I_{yz}&I_{zz}}\,\und{\omega}\\
+  &=  \cfrac{1}{2}\,M\,\mathbf{v_G}^2\,+\,\cfrac{1}{2}\,\und{\omega}^T\,\M{I}\,\und{\omega}
+ \end{align*}
+ dove:
+ \begin{itemize}
+ \item $ \cfrac{1}{2}\,M\,\mathbf{v_G}^2$ è l'energia cinetica di traslazione
+ \item $\cfrac{1}{2}\,\und{\omega}^T\,\M{I}\,\und{\omega}$ è l'energia cinetica di rotazione.
+ \end{itemize}
+ 
+ Osservazioni:\begin{enumerate}
+ \item Se io calcolassi la velocità angolare di una terna mobile e conoscessi il tensore d'inerzia di un corpo sarei in grado di calcolare l'energia cinetica di rotazione: in altri termini sono nella condizione di calcolare la funzione di Lagrange (L = T-V) e scrivere le equazioni di Lagrange.
+ \item L'energia cinetica di rotazione è uguale indipendentemente dal S.d.R. in cui le calcolo, ovvero:
+ \[T = \cfrac{1}{2}\,\leftidx{_f}{\B{\omega}^T}\,\,\leftidx{_f}{\M{I}}\,\,\leftidx{_f}{\B{\omega}} = \cfrac{1}{2}\,\leftidx{_m}{\B{\omega}^T}\,\,\leftidx{_m}{\M{I}}\,\,\leftidx{_m}{\B{\omega}}\]
+ Questa relazione mi permette di determinare come cambia il tensore d'inerzia cambiando S.d.R., infatti è possibile esprimere la velocità angolare calcolata nel S.d.R. fisso nel S.d.R. mobile tramite la matrice di rotazione e, sostituendola all'uguaglianza tra le due energie cinetiche, ottenere:
+ \[
+ \leftidx{_f}{\B{\omega}^T}\,\,\leftidx{_f}{\M{I}}\,\,\leftidx{_f}{\B{\omega}} = \leftidx{_m}{\B{\omega}^T}\quad\leftidx{_f^m}{\M{R}^T}\,\,\leftidx{_f}{\M{I}}\,\,\leftidx{_f^m}{\M{R}^T}\quad\leftidx{_m}{\B{\omega}}
+ \]
+ Il tensore d'inerzia in un S.d.R. è pari ad un tensore d'inerzia in un altro S.d.R. pre e post moltiplicato per le matrici di rotazione.
+ \end{enumerate}
+ 
+ \section{Matrici di trasformazione}
+ 
+ Fino ad ora abbiamo affrontato il seguente problema:
+ 
+ Consideriamo un S.d.R. fisso (f) ed uno mobile (m) ruotati l'uno rispetto all'altro, ma con le origini coincidenti ($O_f \equiv O_m$).
+ Dato quindi un punto P generico nello spazio:
+ \[\leftidx{^f}{\B{OP}} = \leftidx{_m^f}{\M{R}}\,\,\leftidx{^m}{\B{OP}}\] 
+ 
+ Studiamo ora come affrontare il problema in cui il S.d.R. \emph{m} e \emph{f} hanno origini diverse. 
+ \vspace{2mm}
+ 
+ \begin{minipage}{.5\textwidth}
+ Consideriamo un S.d.R. fisso con origine $O_f$ e un S.d.R. mobile con origine $O_m$ non coincidente con $O_f$. Le due terne in esame siano ruotate in maniera generica.
+ 
+ Supponiamo di voler determinare la posizione di un punto P appartenente alla terna mobile. Sotto tali ipotesi, vale che:
+ 
+ \[\mathbf{O_fP} = \mathbf{O_fO_m} + \mathbf{O_mP}\] 
+ \end{minipage}
+\hfill
+\begin{minipage}{.5\textwidth}
+\centering
+\includegraphics[width=.75\textwidth]{chapter07/Immagine149}
+\end{minipage}
+\vspace{1mm}
+
+Tale relazione in forma scalare/matriciale è interpretabile come:
+\[\leftidx{^f}{\B{OP}} = \leftidx{^f}{\B{O_fO_m}}\,+\,\leftidx{_m^f}{\M{R}}\,\leftidx{^m}{\B{O_mP}}\]
+L'espressione appena ricavata è scomoda da utilizzare: supponiamo infatti di avere una catena cinematica aperta che preveda un numero arbitrario di S.d.R. (0,1,2,$\dots$,N) solidali ai membri/corpi che compongono il sistema meccanico. Allora il generico punto P appartenente all'N-esimo corpo (e di conseguenza S.d.R.) può essere determinato come:
+\[\leftidx{^0}{\B{x\\y\\z}} = \leftidx{^0}{\B{x_{O1}\\y_{O1}\\z_{O1}}} + \leftidx{_1^0}{\M{R}}\,\,\leftidx{^1}{\B{x\\y\\z}}\]
+dove a sua volta:
+\[\leftidx{^1}{\B{x\\y\\z}} = \leftidx{^1}{\B{x_{O2}\\y_{O2}\\z_{O2}}} + \leftidx{_2^1}{\M{R}}\,\,\leftidx{^2}{\B{x\\y\\z}}\]
+Possiamo osservare, infatti, che aumentando i S.d.R. il numero di operazioni tra matrici e vettori aumenta, rendendo i calcoli analitici più complessi e scomodi per operazioni di analisi di sistemi meccanici:
+\[\leftidx{^0}{\B{x\\y\\z}} = \leftidx{^0}{\B{x_{O1}\\y_{O1}\\z_{O1}}} + \leftidx{_1^0}{\M{R}}\,\, \leftidx{^1}{\B{x_{O2}\\y_{O2}\\z_{O2}}}\,+ \leftidx{_1^0}{\M{R}}\,\, \leftidx{_2^1}{\M{R}}\,\,\leftidx{^2}{\B{x\\y\\z}}\]
+Per sopperire alla complessità di tale espressione all'aumentare dei membri della catena cinematica è possibile sviluppare l'espressione iniziale in modo tale da avere solo un semplice prodotto tra matrici. A tal fine indichiamo con \emph{a} e \emph{b} due generici S.d.R. a cui applicare la traformazione.
+\begin{align*}
+\leftidx{^a}{\B{x\\y\\z}} &= \leftidx{^a}{\B{x_{Ob}\\y_{Ob}\\z_{Ob}}}\,+\,\leftidx{_b^a}{\M{R}}\,\,\leftidx{^b}{\B{x\\y\\z}}\\
+&\text{Introduciamo una nuova coordinata fittizia unitaria}\\
+\leftidx{^a}{\B{x\\y\\z\\1}}&=  \M{\cdot&---&\cdot&^ax_{Ob}\\|&\leftidx{_b^a}{\M{R}}&|&^ay_{Ob}\\\cdot&---&\cdot&^az_{Ob}\\0&0&0&1}\,\,\leftidx{^b}{\B{x\\y\\z\\1}}
+\end{align*}
+Così facendo le prime tre righe del prodotto matrice per vettore sono esattamente uguale alla traformazione precedentemente esposta.
+
+La matrice 4x4 è detta \textbf{matrice di trasformazione} ed è indicata come: $\leftidx{_b^a}{\M{T}}$, e presenta:
+\begin{itemize}
+\item la sottomatrice 3x3 in alto a sinistra è la matrice di rotazione da \emph{b} ad \emph{a}
+\item i primi tre elementi della quarta riga sono 0
+\item l'elemento in posizione (4,4) è 1
+\item i primi tre elementi della 4 colonna è il vettore $\mathbf{O_aO_b}$ nel sistema di riferimento \emph{a}
+\end{itemize}
+
+In ultima analisi possiamo descrivere la posizione del S.d.R. 1 rispetto a 0 dando la matrice di traformazione $\leftidx{_1^0}{\M{T}}$ e così facendo possiamo descrivere la posizione del S.d.R. 2 rispetto a 1 dando la matrice di trasformazione $\leftidx{_2^1}{\M{T}}$,...
+\begin{align*}
+\leftidx{^0}{\B{x\\y\\z\\1}} = \leftidx{_1^0}{\M{T}}\,\,&\leftidx{^1}{\B{x\\y\\z\\1}}\\
+&\leftidx{^1}{\B{x\\y\\z\\1}} = \leftidx{_2^1}{\M{T}}\,\,\leftidx{^2}{\B{x\\y\\z\\1}}\\
+\leftidx{^0}{\B{x\\y\\z\\1}} = \leftidx{_1^0}{\M{T}}\,\,&\leftidx{_2^1}{\M{T}}\,\,\leftidx{^2}{\B{x\\y\\z\\1}}
+\end{align*}
+Possiamo a questo punto notare che il prodotto tra la matrice di trasformazione $0\rightarrow1$ e $1\rightarrow2$ non è altro che la matrice di traformazione $0\rightarrow2$.
+
+In questo modo nel caso si avesse una catena cinematica da 0 a N:
+\[\leftidx{_N^0}{\M{T}} = \leftidx{_1^0}{\M{T}}\,\,\leftidx{_2^1}{\M{T}}\,\,\dots\,\,\leftidx{^{N-1}_N}{\M{T}}\]
+Il metodo apena descritto mi consente di scrivere le matrici di traformazione elementari e calcolare le matrici di traformazione che mi danno la posizione di qualsiasi corpo lungo la catena cinematica semplicemente moltiplicando matrici di traformazione elementari.
+
+Le \textbf{Trasformazioni elementari} saranno dunque le rotazioni attorno agli assi x,y,z ($R_{x,y,z}$) oppure le traslazioni ($T_{(x,y,z)}$).
+
+Sicoome le rotazioni non sono commutative si dovrà avere una matrice di traformazione elementari corrispondenti alle rotazioni attorno agli assi x, y e z. Le traslazioni, invece, sono commutative, di conseguenza non serve che costruisca tre matrici di trasformazione elementari per le singole traslazioni lungo x, y e z, ma sarà sufficiente scrivere un'unica matrice di traformazione elementare corrispondente alla traslazione.
+\[\M{1&0&0&x_{Om}\\0&1&0&y_{Om}\\0&0&1&z_{Om}\\0&0&0&1}\]
+Una matrice di rotazione elementare è una matrice in cui le terne f e m hanno la medesima origine, ma sono ruotate. Sarà opportuno scrivere una matrice di traformazione per ogni rotazione lungo ciascun asse, ad esempio:
+\[R_x(\alpha) = \M{1&0&0&0\\0&\cos{\alpha}&-\,\sin{\alpha}&0\\0&\sin{\alpha}&\cos{\alpha}&0\\0&0&0&1}\]
+
+In conclusione: sarà necessario costruire 4 funzioni che permettano di scrivere le matrici di trasformazione corrispondenti a $\mathbf{3}$ \textbf{rotazioni elementari} e ad $\mathbf{1}$ \textbf{traslazione}. Fatto questo saremo in grado di scrivere la cinematica diretta di una catena cinematica aperta.
+
+Inoltre facendo la derivata della matrice di trasformazione si ottiene:
+\[\td{}{t}\,\M{R&|&O_m\\---&-&---\\0&|&1} = \M{\dot{R}&|&v_{Om}\\---&-&---\\0&|&0}\]
+Ricordando, ora che la matrice di traformazione tra 0 e N, può essere ricavata come prodotto di matrici di trasformazione tra i singoli S.d.R., eseguendone la derivata si otterrà la somma di una matrice derivata per le altre invariate: il calcolo, dunque, è piuttosto complicato.
+\begin{align*}
+\leftidx{^0_N}{\M{\dot{T}}} &= \leftidx{^0_1}{\M{\dot{T}}}\,\,\leftidx{^1_2}{\M{T}}\,\,\dots\,\,\leftidx{_N^{N-1}}{\M{T}}\\
+&+\,\,\leftidx{^0_1}{\M{T}}\,\,\leftidx{^1_2}{\M{\dot{T}}}\,\,\dots\,\,\leftidx{_N^{N-1}}{\M{T}}\\
+&\dots\dots\dots\dots\\
+&+\,\,\leftidx{^0_1}{\M{T}}\,\,\leftidx{^1_2}{\M{T}}\,\,\dots\,\,\leftidx{_N^{N-1}}{\M{\dot{T}}}
+\end{align*}
+
+Una volta determinata la derivata della matrice di rotazione ($\dot{R}$) è possibile ricavare la velocità angolare del S.d.R. N-esimo rispetto al S.d.R. 0 tramite la relazione $P_{\omega} = \dot{R}\,R^T$; in altre parole la derivata della matrice di traformazione permette di ricavare le infromazioni necessarie per calcolare l'energia cinetica di traslazione e l'energia cinetica di rotazione di ciascuno dei corpi.
